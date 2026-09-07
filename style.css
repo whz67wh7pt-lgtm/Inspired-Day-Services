@@ -1,5 +1,6 @@
 /* =========================================
    INSPIRE DAY SERVICE
+   COMPACT VERSION
    ========================================= */
 
 :root {
@@ -11,14 +12,16 @@
   --yellow: #ffd139;
   --yellow-dark: #f2b721;
   --yellow-light: #fff6c9;
+
   --text: #18304c;
   --muted: #64748b;
   --white: #ffffff;
   --off-white: #fbfdff;
   --border: #dceaf2;
-  --shadow: 0 16px 45px rgba(8, 43, 103, 0.09);
-  --radius: 24px;
-  --radius-small: 15px;
+
+  --shadow: 0 14px 38px rgba(8, 43, 103, 0.08);
+
+  --radius: 22px;
 }
 
 
@@ -34,7 +37,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -50,7 +53,8 @@ body {
 
   color: var(--text);
   background: var(--white);
-  line-height: 1.6;
+
+  line-height: 1.55;
   overflow-x: hidden;
 }
 
@@ -71,11 +75,6 @@ select {
   font: inherit;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
 .container {
   width: min(1180px, calc(100% - 48px));
   margin-inline: auto;
@@ -90,20 +89,20 @@ h1,
 h2,
 h3 {
   color: var(--navy);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 5.5vw, 5.15rem);
 }
 
 h2 {
-  font-size: clamp(2.2rem, 4vw, 3.65rem);
+  font-size: clamp(2.1rem, 3.7vw, 3.45rem);
 }
 
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
 }
 
 h1 span,
@@ -115,20 +114,26 @@ h2 span {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin-bottom: 14px;
+
+  margin-bottom: 12px;
 
   color: var(--navy);
-  font-size: 0.88rem;
+
+  font-size: 0.82rem;
   font-weight: 800;
+
   text-transform: uppercase;
   letter-spacing: 0.13em;
 }
 
 .eyebrow::before {
   content: "";
+
   width: 28px;
   height: 4px;
+
   border-radius: 999px;
+
   background: var(--yellow);
 }
 
@@ -141,10 +146,11 @@ h2 span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 
-  min-height: 52px;
-  padding: 0 26px;
+  gap: 11px;
+
+  min-height: 50px;
+  padding: 0 25px;
 
   border-radius: 999px;
 
@@ -163,7 +169,8 @@ h2 span {
 .button-primary {
   color: var(--white);
   background: var(--navy);
-  box-shadow: 0 12px 30px rgba(8, 43, 103, 0.2);
+
+  box-shadow: 0 10px 25px rgba(8, 43, 103, 0.18);
 }
 
 .button-primary:hover {
@@ -172,6 +179,7 @@ h2 span {
 
 .button-secondary {
   border: 2px solid var(--border);
+
   color: var(--navy);
   background: var(--white);
 }
@@ -186,7 +194,7 @@ h2 span {
 }
 
 .button-yellow:hover {
-  background: #ffda58;
+  background: #ffdb58;
 }
 
 
@@ -200,23 +208,26 @@ h2 span {
   z-index: 1000;
 
   background: rgba(255, 255, 255, 0.95);
+
   border-bottom: 1px solid rgba(8, 43, 103, 0.08);
 
   backdrop-filter: blur(14px);
 }
 
 .header-inner {
-  min-height: 90px;
+  min-height: 82px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+
+  gap: 28px;
 }
 
 .logo-link {
   display: flex;
   align-items: center;
+
   flex-shrink: 0;
 }
 
@@ -228,7 +239,8 @@ h2 span {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 26px;
+
+  gap: 24px;
 
   margin-left: auto;
 }
@@ -237,18 +249,18 @@ h2 span {
   position: relative;
 
   color: var(--navy);
-  font-size: 0.93rem;
-  font-weight: 700;
 
-  transition: color 0.2s ease;
+  font-size: 0.91rem;
+  font-weight: 700;
 }
 
 .main-nav a::after {
   content: "";
 
   position: absolute;
+
   left: 0;
-  bottom: -8px;
+  bottom: -7px;
 
   width: 0;
   height: 3px;
@@ -265,13 +277,15 @@ h2 span {
 }
 
 .header-button {
+  min-height: 46px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 10px;
 
-  min-height: 48px;
-  padding: 0 23px;
+  padding: 0 22px;
 
   border-radius: 999px;
 
@@ -280,15 +294,6 @@ h2 span {
 
   font-weight: 800;
   white-space: nowrap;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.header-button:hover {
-  transform: translateY(-2px);
-  background: #ffdb5a;
 }
 
 .menu-toggle {
@@ -315,10 +320,9 @@ h2 span {
   width: 24px;
   height: 2px;
 
-  background: var(--navy);
   border-radius: 999px;
 
-  transition: 0.2s ease;
+  background: var(--navy);
 }
 
 
@@ -328,9 +332,10 @@ h2 span {
 
 .hero {
   position: relative;
+
   overflow: hidden;
 
-  padding: 70px 0 78px;
+  padding: 40px 0 46px;
 
   background:
     radial-gradient(
@@ -346,73 +351,68 @@ h2 span {
     );
 }
 
-.hero::after {
-  content: "";
-
-  position: absolute;
-  left: -6%;
-  right: -6%;
-  bottom: -85px;
-
-  height: 130px;
-
-  border-radius: 50% 50% 0 0;
-
-  background: var(--white);
-}
-
 .hero-grid {
   position: relative;
   z-index: 2;
 
   display: grid;
+
   grid-template-columns: 0.92fr 1.08fr;
+
   align-items: center;
-  gap: 48px;
+
+  gap: 44px;
 }
 
 .hero-content {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .hero h1 {
   max-width: 690px;
-  margin-bottom: 24px;
+
+  margin-bottom: 20px;
 }
 
 .hero-intro {
-  max-width: 620px;
+  max-width: 610px;
 
   color: #38506b;
 
-  font-size: clamp(1.06rem, 1.45vw, 1.28rem);
-  line-height: 1.6;
+  font-size: clamp(1.03rem, 1.4vw, 1.22rem);
+
+  line-height: 1.55;
 }
 
 .hero-services {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
 
-  margin-top: 34px;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 17px;
+
+  margin-top: 27px;
 }
 
 .hero-service {
   display: flex;
   flex-direction: column;
+
   align-items: flex-start;
-  gap: 10px;
+
+  gap: 9px;
 
   color: var(--navy);
 
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
-  line-height: 1.22;
+
+  line-height: 1.2;
 }
 
 .service-icon {
-  width: 54px;
-  height: 54px;
+  width: 51px;
+  height: 51px;
 
   border-radius: 50%;
 
@@ -422,8 +422,8 @@ h2 span {
 }
 
 .service-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
 
   fill: var(--navy);
 }
@@ -439,42 +439,28 @@ h2 span {
 .hero-buttons {
   display: flex;
   align-items: center;
+
   gap: 13px;
 
-  margin-top: 32px;
+  margin-top: 27px;
 }
 
 .hero-image-area {
   position: relative;
+
   min-width: 0;
 }
 
 .hero-image-wrap {
   position: relative;
 
-  min-height: 520px;
+  min-height: 460px;
 
   overflow: hidden;
 
-  border-radius: 44% 14% 32% 14% / 15% 25% 22% 40%;
+  border-radius: 42% 13% 29% 13% / 15% 24% 20% 37%;
 
   box-shadow: var(--shadow);
-}
-
-.hero-image-wrap::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.3) 0%,
-      transparent 26%
-    );
 }
 
 .hero-image-wrap img {
@@ -488,44 +474,40 @@ h2 span {
   object-position: 54% center;
 }
 
+.hero-image-wrap::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.24),
+      transparent 25%
+    );
+}
+
 .hero-note {
   position: absolute;
-  right: -10px;
-  bottom: 8px;
+
+  right: -5px;
+  bottom: 7px;
+
   z-index: 5;
 
-  padding: 18px 27px;
+  padding: 15px 23px;
 
   color: var(--navy);
-
   background: var(--yellow);
 
   transform: rotate(-3deg);
 
-  box-shadow: 0 12px 24px rgba(8, 43, 103, 0.14);
-}
-
-.hero-note::before,
-.hero-note::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-
-  width: 14px;
-
-  background: var(--yellow);
-}
-
-.hero-note::before {
-  left: -7px;
-  clip-path: polygon(100% 0, 0 20%, 100% 40%, 0 60%, 100% 80%, 0 100%);
-}
-
-.hero-note::after {
-  right: -7px;
-  clip-path: polygon(0 0, 100% 20%, 0 40%, 100% 60%, 0 80%, 100% 100%);
+  box-shadow: 0 10px 22px rgba(8, 43, 103, 0.13);
 }
 
 .hero-note strong,
@@ -534,39 +516,41 @@ h2 span {
 }
 
 .hero-note strong {
-  font-size: 1.12rem;
+  font-size: 1.05rem;
 }
 
 .hero-note span {
-  margin-top: 2px;
-  font-size: 0.95rem;
+  font-size: 0.91rem;
 }
 
 .hero-decoration {
   position: absolute;
+
   border-radius: 999px;
+
+  pointer-events: none;
 }
 
 .hero-decoration-one {
-  top: 30px;
+  top: 28px;
   right: -180px;
 
-  width: 680px;
-  height: 80px;
+  width: 620px;
+  height: 72px;
 
-  border: 21px solid rgba(43, 169, 233, 0.17);
+  border: 18px solid rgba(43, 169, 233, 0.15);
 
   transform: rotate(21deg);
 }
 
 .hero-decoration-two {
-  top: 150px;
+  top: 140px;
   right: -120px;
 
-  width: 470px;
-  height: 58px;
+  width: 440px;
+  height: 54px;
 
-  border: 15px solid rgba(255, 209, 57, 0.3);
+  border: 14px solid rgba(255, 209, 57, 0.28);
 
   transform: rotate(-21deg);
 }
@@ -577,14 +561,17 @@ h2 span {
    ========================================= */
 
 .intro-section {
-  padding: 90px 0 100px;
+  padding: 46px 0;
 }
 
 .intro-grid {
   display: grid;
+
   grid-template-columns: 1fr 0.85fr;
-  gap: 90px;
-  align-items: end;
+
+  gap: 72px;
+
+  align-items: center;
 }
 
 .section-heading h2 {
@@ -592,25 +579,27 @@ h2 span {
 }
 
 .intro-copy {
-  font-size: 1.08rem;
   color: #52677e;
+
+  font-size: 1.04rem;
 }
 
 .intro-copy p + p {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 
 /* =========================================
-   SECTION TITLES
+   SECTION HEADINGS
    ========================================= */
 
 .section-title {
-  margin-bottom: 48px;
+  margin-bottom: 30px;
 }
 
 .section-title.centred {
   max-width: 700px;
+
   margin-left: auto;
   margin-right: auto;
 
@@ -623,11 +612,12 @@ h2 span {
 
 .section-title.centred p {
   max-width: 630px;
-  margin: 18px auto 0;
+
+  margin: 14px auto 0;
 
   color: var(--muted);
 
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 
@@ -636,30 +626,32 @@ h2 span {
    ========================================= */
 
 .services-section {
-  padding: 100px 0;
+  padding: 50px 0;
 
   background: var(--blue-pale);
 }
 
 .services-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+
+  gap: 19px;
 }
 
 .service-card {
   position: relative;
 
-  min-height: 280px;
+  min-height: 245px;
 
-  padding: 34px 29px;
+  padding: 29px 27px;
 
   border: 1px solid rgba(43, 169, 233, 0.17);
   border-radius: var(--radius);
 
   background: var(--white);
 
-  box-shadow: 0 12px 35px rgba(8, 43, 103, 0.05);
+  box-shadow: 0 10px 28px rgba(8, 43, 103, 0.05);
 
   transition:
     transform 0.25s ease,
@@ -667,44 +659,45 @@ h2 span {
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
-  box-shadow: 0 20px 45px rgba(8, 43, 103, 0.1);
+  box-shadow: 0 18px 38px rgba(8, 43, 103, 0.09);
 }
 
 .service-card::after {
   content: "";
 
   position: absolute;
-  left: 29px;
-  right: 29px;
+
+  left: 27px;
+  right: 27px;
   bottom: 0;
 
   height: 5px;
 
-  background: var(--yellow);
-
   border-radius: 999px 999px 0 0;
+
+  background: var(--yellow);
 }
 
 .large-service-icon {
-  width: 62px;
-  height: 62px;
+  width: 57px;
+  height: 57px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
-  border-radius: 18px;
+  border-radius: 17px;
 
   background: var(--blue-light);
 }
 
 .large-service-icon svg {
-  width: 31px;
-  height: 31px;
+  width: 29px;
+  height: 29px;
 
   fill: var(--navy);
 }
@@ -714,12 +707,13 @@ h2 span {
 }
 
 .service-card h3 {
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 }
 
 .service-card p {
   color: #65778d;
-  font-size: 0.96rem;
+
+  font-size: 0.93rem;
 }
 
 
@@ -728,27 +722,30 @@ h2 span {
    ========================================= */
 
 .director-section {
-  padding: 105px 0;
+  padding: 50px 0;
 }
 
 .director-heading {
-  margin-bottom: 42px;
+  margin-bottom: 28px;
 }
 
 .director-grid {
   display: grid;
+
   grid-template-columns: 0.72fr 1.25fr 1fr;
-  gap: 32px;
+
+  gap: 28px;
+
   align-items: stretch;
 }
 
 .director-photo-wrap {
   height: 100%;
-  min-height: 610px;
+  min-height: 525px;
 
   overflow: hidden;
 
-  border-radius: 28px;
+  border-radius: 25px;
 
   background: #edf4f7;
 
@@ -764,32 +761,31 @@ h2 span {
 }
 
 .director-story {
-  padding: 25px 12px;
+  padding: 15px 7px;
 }
 
 .director-story h3 {
-  margin-bottom: 22px;
+  margin-bottom: 17px;
 
-  font-size: 1.65rem;
+  font-size: 1.55rem;
 }
 
 .director-story > p {
   color: #50657c;
 
-  font-size: 1rem;
+  font-size: 0.96rem;
 }
 
 .director-story > p + p {
-  margin-top: 16px;
+  margin-top: 13px;
 }
 
 blockquote {
-  position: relative;
+  margin-top: 21px;
 
-  margin-top: 30px;
-  padding: 27px 28px 25px;
+  padding: 22px 24px;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   background: var(--blue-pale);
 
@@ -799,37 +795,39 @@ blockquote {
 .quote-mark {
   display: block;
 
-  height: 32px;
+  height: 27px;
 
   color: var(--blue);
 
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
+
   line-height: 0.75;
 }
 
 blockquote p {
-  font-size: 1.02rem;
+  font-size: 0.96rem;
+
   font-style: italic;
 }
 
 blockquote cite {
   display: block;
 
-  margin-top: 13px;
+  margin-top: 10px;
 
   color: var(--navy);
 
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-style: normal;
   font-weight: 800;
 }
 
 .qualifications {
-  padding: 30px 27px;
+  padding: 25px 23px;
 
   border: 1px solid rgba(43, 169, 233, 0.18);
-  border-radius: 25px;
+  border-radius: 22px;
 
   background:
     linear-gradient(
@@ -842,14 +840,15 @@ blockquote cite {
 .qualification-header {
   display: flex;
   align-items: center;
-  gap: 13px;
 
-  margin-bottom: 20px;
+  gap: 12px;
+
+  margin-bottom: 17px;
 }
 
 .qualification-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
@@ -857,45 +856,48 @@ blockquote cite {
 
   flex-shrink: 0;
 
-  border-radius: 14px;
+  border-radius: 13px;
 
   background: var(--navy);
 }
 
 .qualification-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 
-  fill: white;
+  fill: var(--white);
 }
 
 .qualifications ul {
   list-style: none;
 
   display: grid;
-  gap: 10px;
+
+  gap: 8px;
 }
 
 .qualifications li {
   position: relative;
 
-  padding-left: 28px;
+  padding-left: 26px;
 
   color: #37516d;
 
-  font-size: 0.91rem;
-  line-height: 1.4;
+  font-size: 0.87rem;
+
+  line-height: 1.35;
 }
 
 .qualifications li::before {
   content: "✓";
 
   position: absolute;
+
   left: 0;
   top: 0;
 
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
 
   display: flex;
   align-items: center;
@@ -906,7 +908,7 @@ blockquote cite {
   color: var(--white);
   background: var(--blue);
 
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 900;
 }
 
@@ -916,7 +918,7 @@ blockquote cite {
    ========================================= */
 
 .team-section {
-  padding: 100px 0;
+  padding: 50px 0;
 
   background:
     linear-gradient(
@@ -928,32 +930,38 @@ blockquote cite {
 
 .team-title {
   display: flex;
+
   align-items: flex-end;
   justify-content: space-between;
+
   gap: 40px;
+
+  margin-bottom: 30px;
 }
 
 .team-title p {
-  max-width: 480px;
+  max-width: 470px;
 
   color: var(--muted);
 }
 
 .team-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  gap: 21px;
+
+  gap: 19px;
 }
 
 .team-card {
   overflow: hidden;
 
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 19px;
 
   background: var(--white);
 
-  box-shadow: 0 10px 30px rgba(8, 43, 103, 0.05);
+  box-shadow: 0 9px 27px rgba(8, 43, 103, 0.05);
 
   transition:
     transform 0.22s ease,
@@ -961,14 +969,14 @@ blockquote cite {
 }
 
 .team-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 
-  box-shadow: 0 20px 40px rgba(8, 43, 103, 0.09);
+  box-shadow: 0 17px 35px rgba(8, 43, 103, 0.09);
 }
 
 .team-photo,
 .team-placeholder {
-  height: 245px;
+  height: 215px;
 }
 
 .team-photo img {
@@ -993,13 +1001,13 @@ blockquote cite {
   background:
     radial-gradient(
       circle at 50% 38%,
-      #ffffff 0 31px,
-      transparent 32px
+      #ffffff 0 29px,
+      transparent 30px
     ),
     radial-gradient(
       ellipse at 50% 103%,
-      #ffffff 0 82px,
-      transparent 83px
+      #ffffff 0 73px,
+      transparent 74px
     ),
     linear-gradient(
       145deg,
@@ -1008,34 +1016,21 @@ blockquote cite {
     );
 }
 
-.team-placeholder::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      135deg,
-      transparent 45%,
-      rgba(255,255,255,0.25)
-    );
-}
-
 .team-placeholder span {
   position: absolute;
-  bottom: 16px;
+
+  bottom: 14px;
+
   z-index: 2;
 
-  padding: 6px 11px;
+  padding: 5px 10px;
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,0.9);
-
   color: var(--navy);
+  background: rgba(255, 255, 255, 0.91);
 
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 800;
 }
 
@@ -1043,13 +1038,13 @@ blockquote cite {
   background:
     radial-gradient(
       circle at 50% 38%,
-      #ffffff 0 31px,
-      transparent 32px
+      #ffffff 0 29px,
+      transparent 30px
     ),
     radial-gradient(
       ellipse at 50% 103%,
-      #ffffff 0 82px,
-      transparent 83px
+      #ffffff 0 73px,
+      transparent 74px
     ),
     linear-gradient(
       145deg,
@@ -1062,13 +1057,13 @@ blockquote cite {
   background:
     radial-gradient(
       circle at 50% 38%,
-      #ffffff 0 31px,
-      transparent 32px
+      #ffffff 0 29px,
+      transparent 30px
     ),
     radial-gradient(
       ellipse at 50% 103%,
-      #ffffff 0 82px,
-      transparent 83px
+      #ffffff 0 73px,
+      transparent 74px
     ),
     linear-gradient(
       145deg,
@@ -1078,61 +1073,68 @@ blockquote cite {
 }
 
 .team-content {
-  padding: 20px;
+  padding: 17px;
 }
 
 .team-content h3 {
-  font-size: 1.08rem;
+  font-size: 1.03rem;
 }
 
 .team-role {
   display: block;
 
-  margin-top: 5px;
+  margin-top: 4px;
 
   color: var(--blue);
 
-  font-size: 0.8rem;
+  font-size: 0.77rem;
   font-weight: 800;
 }
 
 .team-content p {
-  margin-top: 13px;
+  margin-top: 10px;
 
   color: #6a7b8f;
 
-  font-size: 0.88rem;
+  font-size: 0.84rem;
+
+  line-height: 1.45;
 }
 
 
 /* =========================================
-   VALUES
+   VALUES BANNER
    ========================================= */
 
 .values-banner {
-  padding: 88px 0;
+  padding: 48px 0;
+
+  overflow: hidden;
 
   color: var(--white);
   background: var(--navy);
-
-  overflow: hidden;
 }
 
 .values-grid {
   display: grid;
+
   grid-template-columns: 1.05fr 0.95fr;
+
   align-items: center;
-  gap: 90px;
+
+  gap: 80px;
 }
 
 .values-small {
   display: block;
 
-  margin-bottom: 15px;
+  margin-bottom: 11px;
 
   color: var(--yellow);
 
+  font-size: 0.83rem;
   font-weight: 800;
+
   text-transform: uppercase;
   letter-spacing: 0.13em;
 }
@@ -1148,11 +1150,11 @@ blockquote cite {
 .values-copy p {
   max-width: 520px;
 
-  margin-bottom: 27px;
+  margin-bottom: 22px;
 
   color: #d9e6f7;
 
-  font-size: 1.08rem;
+  font-size: 1.02rem;
 }
 
 
@@ -1161,24 +1163,27 @@ blockquote cite {
    ========================================= */
 
 .instagram-section {
-  padding: 105px 0;
+  padding: 50px 0;
 }
 
 .instagram-header {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-end;
+
   gap: 35px;
 
-  margin-bottom: 42px;
+  margin-bottom: 28px;
 }
 
 .instagram-button {
   display: inline-flex;
   align-items: center;
+
   gap: 10px;
 
-  padding: 13px 21px;
+  padding: 11px 19px;
 
   border: 2px solid var(--border);
   border-radius: 999px;
@@ -1186,37 +1191,30 @@ blockquote cite {
   color: var(--navy);
 
   font-weight: 800;
-
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.instagram-button:hover {
-  transform: translateY(-2px);
-  border-color: var(--blue);
 }
 
 .instagram-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  gap: 17px;
+
+  gap: 16px;
 }
 
 .instagram-card {
   position: relative;
 
-  min-height: 300px;
+  min-height: 230px;
 
   overflow: hidden;
 
-  border-radius: 22px;
+  border-radius: 20px;
 
   transition: transform 0.22s ease;
 }
 
 .instagram-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .instagram-card::before {
@@ -1271,9 +1269,10 @@ blockquote cite {
 
 .instagram-card-content {
   position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+
+  left: 18px;
+  right: 18px;
+  bottom: 17px;
 
   color: var(--white);
 }
@@ -1281,17 +1280,18 @@ blockquote cite {
 .instagram-card-content span {
   display: block;
 
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
+
   opacity: 0.9;
 }
 
 .instagram-card-content strong {
   display: block;
 
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 
@@ -1300,7 +1300,7 @@ blockquote cite {
    ========================================= */
 
 .contact-section {
-  padding: 105px 0;
+  padding: 52px 0;
 
   background:
     linear-gradient(
@@ -1313,8 +1313,11 @@ blockquote cite {
 
 .contact-grid {
   display: grid;
+
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 80px;
+
+  gap: 68px;
+
   align-items: center;
 }
 
@@ -1323,31 +1326,33 @@ blockquote cite {
 }
 
 .contact-intro {
-  max-width: 560px;
+  max-width: 550px;
 
-  margin-top: 23px;
+  margin-top: 18px;
 
   color: #5f738a;
 
-  font-size: 1.04rem;
+  font-size: 1rem;
 }
 
 .contact-points {
   display: grid;
-  gap: 20px;
 
-  margin-top: 34px;
+  gap: 16px;
+
+  margin-top: 27px;
 }
 
 .contact-point {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+
+  gap: 14px;
 }
 
 .contact-point-icon {
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
 
   display: flex;
   align-items: center;
@@ -1372,18 +1377,18 @@ blockquote cite {
 .contact-point span {
   display: block;
 
-  margin-top: 3px;
+  margin-top: 2px;
 
   color: #718197;
 
-  font-size: 0.91rem;
+  font-size: 0.88rem;
 }
 
 .form-card {
-  padding: 38px;
+  padding: 32px;
 
   border: 1px solid rgba(43, 169, 233, 0.2);
-  border-radius: 27px;
+  border-radius: 24px;
 
   background: var(--white);
 
@@ -1391,36 +1396,38 @@ blockquote cite {
 }
 
 .form-card h3 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .form-card > p {
-  margin-top: 9px;
-  margin-bottom: 25px;
+  margin-top: 7px;
+  margin-bottom: 21px;
 
   color: #718197;
 
-  font-size: 0.92rem;
+  font-size: 0.89rem;
 }
 
 .form-row {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+
+  gap: 15px;
 }
 
 .form-group {
-  margin-bottom: 17px;
+  margin-bottom: 14px;
 }
 
 .form-group label {
   display: block;
 
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 
   color: var(--navy);
 
-  font-size: 0.84rem;
+  font-size: 0.81rem;
   font-weight: 800;
 }
 
@@ -1429,19 +1436,15 @@ blockquote cite {
 .form-group select {
   width: 100%;
 
-  padding: 13px 14px;
+  padding: 12px 13px;
 
   border: 1px solid #ccdae5;
-  border-radius: 12px;
+  border-radius: 11px;
 
   color: var(--text);
   background: #fcfeff;
 
   outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
@@ -1459,14 +1462,15 @@ blockquote cite {
 
 .form-submit {
   width: 100%;
-  min-height: 54px;
+  min-height: 51px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 
-  margin-top: 4px;
+  gap: 11px;
+
+  margin-top: 2px;
 
   border: none;
   border-radius: 999px;
@@ -1477,29 +1481,20 @@ blockquote cite {
   font-weight: 900;
 
   cursor: pointer;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
-}
-
-.form-submit:hover {
-  transform: translateY(-2px);
-  background: #ffdc59;
 }
 
 .form-message {
   display: none;
 
-  margin-top: 14px;
-  padding: 12px 14px;
+  margin-top: 13px;
+  padding: 11px 13px;
 
   border-radius: 10px;
 
   color: #106b3d;
   background: #e8fff2;
 
-  font-size: 0.9rem;
+  font-size: 0.87rem;
 }
 
 
@@ -1510,83 +1505,72 @@ blockquote cite {
 .site-footer {
   position: relative;
 
-  padding-top: 80px;
+  padding-top: 47px;
 
   background: #f6fbfe;
 }
 
 .footer-wave {
-  position: absolute;
-  top: -38px;
-  left: -4%;
-  right: -4%;
-
-  height: 80px;
-
-  border-radius: 50% 50% 0 0;
-
-  background: #f6fbfe;
+  display: none;
 }
 
 .footer-main {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr 0.8fr;
-  gap: 80px;
 
-  padding-bottom: 55px;
+  grid-template-columns: 1.4fr 0.6fr 0.8fr;
+
+  gap: 65px;
+
+  padding-bottom: 38px;
 }
 
 .footer-brand img {
-  width: 175px;
+  width: 165px;
 }
 
 .footer-brand p {
   max-width: 430px;
 
-  margin-top: 19px;
+  margin-top: 15px;
 
   color: #6b7d91;
 
-  font-size: 0.93rem;
+  font-size: 0.9rem;
 }
 
 .footer-links,
 .footer-contact {
   display: flex;
   flex-direction: column;
+
   align-items: flex-start;
 }
 
 .footer-links h3,
 .footer-contact h3 {
-  margin-bottom: 17px;
+  margin-bottom: 13px;
 
   font-size: 1rem;
 }
 
 .footer-links a {
-  margin-bottom: 9px;
+  margin-bottom: 7px;
 
   color: #60758a;
 
-  font-size: 0.9rem;
-
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--blue);
+  font-size: 0.87rem;
 }
 
 .footer-contact p {
   color: #6b7d91;
-  font-size: 0.9rem;
+
+  font-size: 0.87rem;
 }
 
 .footer-instagram {
   display: inline-flex;
 
-  margin-top: 15px;
+  margin-top: 12px;
 
   color: var(--navy);
 
@@ -1598,20 +1582,23 @@ blockquote cite {
 }
 
 .footer-bottom-inner {
-  min-height: 70px;
+  min-height: 61px;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   gap: 30px;
 
   color: #75879b;
 
-  font-size: 0.82rem;
+  font-size: 0.79rem;
 }
 
 .footer-message {
   color: var(--navy);
+
   font-weight: 700;
 }
 
@@ -1623,11 +1610,11 @@ blockquote cite {
 @media (max-width: 1040px) {
 
   .main-nav {
-    gap: 17px;
+    gap: 16px;
   }
 
   .main-nav a {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
 
   .header-button {
@@ -1636,7 +1623,8 @@ blockquote cite {
 
   .hero-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 35px;
+
+    gap: 32px;
   }
 
   .hero-services {
@@ -1644,7 +1632,7 @@ blockquote cite {
   }
 
   .hero-image-wrap {
-    min-height: 470px;
+    min-height: 440px;
   }
 
   .services-grid {
@@ -1677,11 +1665,11 @@ blockquote cite {
   }
 
   .header-inner {
-    min-height: 76px;
+    min-height: 74px;
   }
 
   .site-logo {
-    width: 132px;
+    width: 130px;
   }
 
   .menu-toggle {
@@ -1690,16 +1678,19 @@ blockquote cite {
 
   .main-nav {
     position: absolute;
-    top: 76px;
+
+    top: 74px;
     left: 0;
     right: 0;
 
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
 
-    padding: 12px 20px 20px;
+    padding: 10px 20px 18px;
 
     background: var(--white);
 
@@ -1713,9 +1704,9 @@ blockquote cite {
   }
 
   .main-nav a {
-    padding: 13px 5px;
+    padding: 12px 5px;
 
-    font-size: 0.95rem;
+    font-size: 0.94rem;
   }
 
   .main-nav a::after {
@@ -1723,7 +1714,7 @@ blockquote cite {
   }
 
   .hero {
-    padding-top: 35px;
+    padding: 32px 0 42px;
   }
 
   .hero-grid {
@@ -1739,16 +1730,13 @@ blockquote cite {
   }
 
   .hero-image-wrap {
-    min-height: 520px;
-  }
-
-  .hero-note {
-    right: 12px;
+    min-height: 480px;
   }
 
   .intro-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+
+    gap: 25px;
   }
 
   .director-grid {
@@ -1756,8 +1744,8 @@ blockquote cite {
   }
 
   .director-photo-wrap {
-    min-height: 600px;
-    max-height: 700px;
+    min-height: 540px;
+    max-height: 650px;
   }
 
   .qualifications {
@@ -1769,7 +1757,7 @@ blockquote cite {
   }
 
   .team-title p {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .team-grid {
@@ -1778,7 +1766,8 @@ blockquote cite {
 
   .values-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+
+    gap: 28px;
   }
 
   .instagram-grid {
@@ -1787,12 +1776,14 @@ blockquote cite {
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+
+    gap: 38px;
   }
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+
+    gap: 35px;
   }
 
   .footer-brand {
@@ -1812,26 +1803,33 @@ blockquote cite {
     width: min(100% - 28px, 1180px);
   }
 
+  h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
   .hero {
-    padding-top: 22px;
-    padding-bottom: 55px;
+    padding: 24px 0 36px;
   }
 
   .hero h1 {
-    font-size: clamp(2.55rem, 13vw, 4rem);
+    font-size: clamp(2.5rem, 13vw, 3.8rem);
   }
 
   .hero-intro {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .hero-services {
-    gap: 16px 10px;
+    gap: 14px 9px;
+
+    margin-top: 23px;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
+
+    margin-top: 24px;
   }
 
   .button {
@@ -1839,9 +1837,9 @@ blockquote cite {
   }
 
   .hero-image-wrap {
-    min-height: 390px;
+    min-height: 380px;
 
-    border-radius: 30px;
+    border-radius: 27px;
   }
 
   .hero-image-wrap img {
@@ -1850,18 +1848,21 @@ blockquote cite {
 
   .hero-note {
     right: 5px;
-    bottom: -18px;
+    bottom: -14px;
 
-    padding: 14px 18px;
+    padding: 12px 17px;
   }
 
   .hero-note strong {
-    font-size: 0.95rem;
+    font-size: 0.91rem;
   }
 
   .hero-note span {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
+
+
+  /* Compact mobile section spacing */
 
   .intro-section,
   .services-section,
@@ -1869,8 +1870,25 @@ blockquote cite {
   .team-section,
   .instagram-section,
   .contact-section {
-    padding: 72px 0;
+    padding: 38px 0;
   }
+
+  .values-banner {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+  }
+
+  .director-heading {
+    margin-bottom: 23px;
+  }
+
+  .instagram-header {
+    margin-bottom: 23px;
+  }
+
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -1881,7 +1899,7 @@ blockquote cite {
   }
 
   .director-photo-wrap {
-    min-height: 500px;
+    min-height: 460px;
   }
 
   .director-story {
@@ -1890,7 +1908,7 @@ blockquote cite {
   }
 
   .qualifications {
-    padding: 25px 20px;
+    padding: 22px 18px;
   }
 
   .team-grid {
@@ -1899,7 +1917,7 @@ blockquote cite {
 
   .team-photo,
   .team-placeholder {
-    height: 340px;
+    height: 310px;
   }
 
   .instagram-header {
@@ -1907,40 +1925,51 @@ blockquote cite {
   }
 
   .instagram-button {
-    margin-top: 22px;
+    margin-top: 18px;
   }
 
   .instagram-grid {
     grid-template-columns: 1fr 1fr;
+
     gap: 10px;
   }
 
   .instagram-card {
-    min-height: 210px;
-    border-radius: 15px;
+    min-height: 190px;
+
+    border-radius: 14px;
   }
 
   .instagram-card-content {
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
   }
 
   .instagram-card-content strong {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 
   .form-card {
-    padding: 27px 20px;
+    padding: 24px 18px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+
     gap: 0;
+  }
+
+  .site-footer {
+    padding-top: 37px;
   }
 
   .footer-main {
     grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding-bottom: 30px;
   }
 
   .footer-brand {
@@ -1948,87 +1977,12 @@ blockquote cite {
   }
 
   .footer-bottom-inner {
-    padding: 20px 0;
+    padding: 16px 0;
 
     flex-direction: column;
     align-items: flex-start;
-    gap: 7px;
+
+    gap: 5px;
   }
-   /* =========================================
-   TIGHTER SECTION SPACING
-   ========================================= */
-
-.hero {
-  padding-top: 48px;
-  padding-bottom: 58px;
-}
-
-.intro-section {
-  padding: 58px 0 62px;
-}
-
-.services-section {
-  padding: 62px 0;
-}
-
-.director-section {
-  padding: 62px 0;
-}
-
-.team-section {
-  padding: 62px 0;
-}
-
-.values-banner {
-  padding: 58px 0;
-}
-
-.instagram-section {
-  padding: 62px 0;
-}
-
-.contact-section {
-  padding: 62px 0;
-}
-
-
-/* Reduce space between headings and content */
-
-.section-title {
-  margin-bottom: 32px;
-}
-
-.director-heading {
-  margin-bottom: 28px;
-}
-
-.instagram-header {
-  margin-bottom: 30px;
-}
-
-
-/* Mobile */
-
-@media (max-width: 580px) {
-
-  .hero {
-    padding-top: 28px;
-    padding-bottom: 45px;
-  }
-
-  .intro-section,
-  .services-section,
-  .director-section,
-  .team-section,
-  .instagram-section,
-  .contact-section {
-    padding: 50px 0;
-  }
-
-  .values-banner {
-    padding: 50px 0;
-  }
-
-}
 
 }
