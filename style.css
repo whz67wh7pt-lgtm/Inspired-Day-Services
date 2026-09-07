@@ -1954,5 +1954,81 @@ blockquote cite {
     align-items: flex-start;
     gap: 7px;
   }
+   /* =========================================
+   TIGHTER SECTION SPACING
+   ========================================= */
+
+.hero {
+  padding-top: 48px;
+  padding-bottom: 58px;
+}
+
+.intro-section {
+  padding: 58px 0 62px;
+}
+
+.services-section {
+  padding: 62px 0;
+}
+
+.director-section {
+  padding: 62px 0;
+}
+
+.team-section {
+  padding: 62px 0;
+}
+
+.values-banner {
+  padding: 58px 0;
+}
+
+.instagram-section {
+  padding: 62px 0;
+}
+
+.contact-section {
+  padding: 62px 0;
+}
+
+
+/* Reduce space between headings and content */
+
+.section-title {
+  margin-bottom: 32px;
+}
+
+.director-heading {
+  margin-bottom: 28px;
+}
+
+.instagram-header {
+  margin-bottom: 30px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 580px) {
+
+  .hero {
+    padding-top: 28px;
+    padding-bottom: 45px;
+  }
+
+  .intro-section,
+  .services-section,
+  .director-section,
+  .team-section,
+  .instagram-section,
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .values-banner {
+    padding: 50px 0;
+  }
+
+}
 
 }
