@@ -1,1201 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Inspire Day Service supports adults with learning disabilities and autism through life skills, independent living skills, educational activities and social opportunities."
+    content="Inspire Day Service provides specialist day services for adults aged 16+ with learning disabilities and autism."
   >
 
   <title>Inspire Day Service</title>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
 
-      <a href="#home" class="logo-link" aria-label="Inspire Day Service home">
-        <img
-          src="images/Inspire-Logo.png"
-          alt="Inspire Day Service"
-          class="site-logo"
-        >
-      </a>
+<!-- =========================================
+     HEADER
+========================================= -->
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation"
-        aria-expanded="false"
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a
+      href="#home"
+      class="logo-link"
+      aria-label="Inspire Day Service home"
+    >
+
+      <img
+        src="images/Inspire-Logo.png"
+        alt="Inspire Day Service"
+        class="site-logo"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
-      <nav class="main-nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">What We Do</a>
-        <a href="#team">Meet the Team</a>
-        <a href="#instagram">Life at Inspire</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    </a>
 
-      <a href="#contact" class="header-button">
-        Enquire Now
-        <span aria-hidden="true">→</span>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <nav
+      class="main-nav"
+      id="mainNav"
+    >
+
+      <a href="#home">
+        Home
       </a>
 
-    </div>
-  </header>
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#programme">
+        What We Do
+      </a>
+
+      <a href="#team">
+        Our Team
+      </a>
+
+      <a href="#service-info">
+        Service Info
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </nav>
 
 
-  <main>
+    <a
+      href="#contact"
+      class="header-button"
+    >
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+      Enquire Now
+      <span>→</span>
 
-      <div class="hero-decoration hero-decoration-one"></div>
-      <div class="hero-decoration hero-decoration-two"></div>
+    </a>
 
-      <div class="container hero-grid">
+  </div>
 
-        <div class="hero-content">
+</header>
 
-          <span class="eyebrow">
-            Welcome to Inspire Day Service
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+  class="hero"
+  id="home"
+>
+
+  <div class="hero-decoration hero-decoration-one"></div>
+  <div class="hero-decoration hero-decoration-two"></div>
+
+
+  <div class="container hero-grid">
+
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        Specialist Day Service
+      </span>
+
+
+      <h1>
+        A place to belong,
+        <span>grow and shine.</span>
+      </h1>
+
+
+      <p class="hero-intro">
+
+        Supporting adults aged 16+ with learning disabilities and autism
+        to live life to the fullest.
+
+      </p>
+
+
+      <div class="hero-services">
+
+
+        <div class="hero-service">
+
+          <div class="service-icon blue-icon">
+            <span>✓</span>
+          </div>
+
+          <span>
+            Life Skills
           </span>
 
-          <h1>
-            Brighter Days.<br>
-            <span>Bigger Possibilities.</span>
-          </h1>
-
-          <p class="hero-intro">
-            Supporting adults with learning disabilities and autism through
-            life skills, independent living skills, educational activities
-            and fun social opportunities.
-          </p>
-
-          <div class="hero-services">
-
-            <div class="hero-service">
-              <div class="service-icon blue-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3ZM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm8 2c-2 0-6 1-6 3v3h12v-3c0-2-4-3-6-3ZM8 13c-2.33 0-7 1.17-7 3.5V19h7v-3c0-.85.33-1.52.88-2.05A9.5 9.5 0 0 0 8 13Z"/>
-                </svg>
-              </div>
-              <span>Life Skills</span>
-            </div>
-
-            <div class="hero-service">
-              <div class="service-icon yellow-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Zm0 2.7 6 5.4V19h-3v-6H9v6H6v-7.9l6-5.4Z"/>
-                </svg>
-              </div>
-              <span>Greater Independence</span>
-            </div>
-
-            <div class="hero-service">
-              <div class="service-icon blue-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m12 3 10 5-10 5L4 9v6H2V8l10-5Zm-6 9.2 6 3 6-3V17c0 1.7-3 3-6 3s-6-1.3-6-3v-4.8Z"/>
-                </svg>
-              </div>
-              <span>Educational Activities</span>
-            </div>
-
-            <div class="hero-service">
-              <div class="service-icon yellow-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4Zm0 2c-3.3 0-6 1.7-6 3.8V20h12v-2.2c0-2.1-2.7-3.8-6-3.8ZM5 11c1.7 0 3-1.3 3-3S6.7 5 5 5 2 6.3 2 8s1.3 3 3 3Zm14 0c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3Z"/>
-                </svg>
-              </div>
-              <span>Social Opportunities</span>
-            </div>
-
-          </div>
-
-          <div class="hero-buttons">
-
-            <a href="#contact" class="button button-primary">
-              Enquire Now
-              <span>→</span>
-            </a>
-
-            <a href="#about" class="button button-secondary">
-              Find Out More
-            </a>
-
-          </div>
-
         </div>
 
 
-        <div class="hero-image-area">
+        <div class="hero-service">
 
-          <div class="hero-image-wrap">
-            <img
-              src="images/Hero.png"
-              alt="Lyndsey from Inspire enjoying a cup of tea with a client"
-            >
+          <div class="service-icon yellow-icon">
+            <span>✓</span>
           </div>
 
-          <div class="hero-note">
-            <strong>More than a day service</strong>
-            <span>A supportive family ♡</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ABOUT -->
-    <section class="intro-section" id="about">
-
-      <div class="container intro-grid">
-
-        <div class="section-heading">
-
-          <span class="eyebrow">
-            About Inspire
+          <span>
+            Independence
           </span>
 
-          <h2>
-            Supporting people to live
-            <span>fuller, more independent lives.</span>
-          </h2>
-
         </div>
 
 
-        <div class="intro-copy">
+        <div class="hero-service">
 
-          <p>
-            Inspire Day Service provides a welcoming and supportive environment
-            for adults with learning disabilities and autism.
-          </p>
+          <div class="service-icon blue-icon">
+            <span>✓</span>
+          </div>
 
-          <p>
-            Our focus is on helping every individual develop confidence,
-            independence and practical skills while enjoying meaningful
-            activities, friendships and new experiences.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- SERVICES -->
-    <section class="services-section" id="services">
-
-      <div class="container">
-
-        <div class="section-title centred">
-
-          <span class="eyebrow">
-            What We Do
+          <span>
+            Learning
           </span>
 
-          <h2>
-            Skills for life.
-            <span>Activities to enjoy.</span>
-          </h2>
-
-          <p>
-            Our days combine practical learning, personal development and
-            enjoyable social experiences.
-          </p>
-
         </div>
 
 
-        <div class="services-grid">
+        <div class="hero-service">
 
-          <article class="service-card">
+          <div class="service-icon yellow-icon">
+            <span>✓</span>
+          </div>
 
-            <div class="large-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3Zm0 2.7 6 5.4V19h-3v-6H9v6H6v-7.9l6-5.4Z"/>
-              </svg>
-            </div>
-
-            <h3>Independent Living</h3>
-
-            <p>
-              Developing everyday skills that support greater confidence,
-              independence and choice.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="large-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 2h6v2h5a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5V2Zm2 2h2V3h-2v1Zm-5 5h12V7H6v2Zm0 4h5v-2H6v2Zm0 4h8v-2H6v2Z"/>
-              </svg>
-            </div>
-
-            <h3>Life Skills</h3>
-
-            <p>
-              Learning practical skills through real activities, routines and
-              experiences.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="large-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m12 3 10 5-10 5L4 9v6H2V8l10-5Zm-6 9.2 6 3 6-3V17c0 1.7-3 3-6 3s-6-1.3-6-3v-4.8Z"/>
-              </svg>
-            </div>
-
-            <h3>Learning &amp; Development</h3>
-
-            <p>
-              Activities designed to develop communication, confidence and
-              personal skills.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="large-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3ZM8 11c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm8 2c-2 0-6 1-6 3v3h12v-3c0-2-4-3-6-3ZM8 13c-2.33 0-7 1.17-7 3.5V19h7v-3c0-.85.33-1.52.88-2.05A9.5 9.5 0 0 0 8 13Z"/>
-              </svg>
-            </div>
-
-            <h3>Social Activities</h3>
-
-            <p>
-              Fun activities, outings and shared experiences that help build
-              friendships and belonging.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- DIRECTOR -->
-    <section class="director-section">
-
-      <div class="container">
-
-        <div class="director-heading">
-
-          <span class="eyebrow">
-            Meet Our Director
+          <span>
+            Social Activities
           </span>
 
-          <h2>
-            Lyndsey Curtis
-          </h2>
-
         </div>
 
-
-        <div class="director-grid">
-
-          <div class="director-photo">
-
-            <div class="director-photo-wrap">
-
-              <img
-                src="images/Lindsey.png"
-                alt="Lyndsey Curtis, Director of Inspire Day Service"
-              >
-
-            </div>
-
-          </div>
-
-
-          <div class="director-story">
-
-            <h3>
-              The heart behind Inspire
-            </h3>
-
-            <p>
-              Lyndsey founded Inspire in 2016 as a partnership after struggling
-              to find suitable post-college services for her brother, who has
-              Down syndrome.
-            </p>
-
-            <p>
-              She wanted somewhere that could offer life skills development,
-              educational activities and, just as importantly, enjoyable
-              social opportunities.
-            </p>
-
-            <p>
-              In April 2024, Lyndsey purchased Inspire Day Service in full from
-              her business partner, becoming the sole director. Her passion for
-              helping others and her plans for Inspire have continued to grow
-              ever since.
-            </p>
-
-
-            <blockquote>
-
-              <span class="quote-mark">
-                “
-              </span>
-
-              <p>
-                I absolutely love my job. Seeing our clients progress in life
-                skills, enjoy social activities and build lasting friendships,
-                it’s like one big, supportive family.
-              </p>
-
-              <cite>
-                Lyndsey Curtis, Director
-              </cite>
-
-            </blockquote>
-
-          </div>
-
-
-          <div class="qualifications">
-
-            <div class="qualification-header">
-
-              <div class="qualification-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m12 3 10 5-10 5L4 9v6H2V8l10-5Zm-6 9.2 6 3 6-3V17c0 1.7-3 3-6 3s-6-1.3-6-3v-4.8Z"/>
-                </svg>
-              </div>
-
-              <h3>
-                Lyndsey’s Qualifications
-              </h3>
-
-            </div>
-
-
-            <ul>
-
-              <li>
-                Manual Handling in a Care Setting
-              </li>
-
-              <li>
-                First Aid
-              </li>
-
-              <li>
-                Epilepsy Awareness &amp; Emergency Medication (Buccal)
-              </li>
-
-              <li>
-                Medication Training in Care
-              </li>
-
-              <li>
-                Risk Assessment
-              </li>
-
-              <li>
-                Level 3 Safeguarding Vulnerable Adults
-              </li>
-
-              <li>
-                Challenging Behaviour
-              </li>
-
-              <li>
-                Food Hygiene &amp; Safety
-              </li>
-
-              <li>
-                Communication Skills in Health &amp; Social Care
-              </li>
-
-              <li>
-                Autism Awareness
-              </li>
-
-              <li>
-                Leadership &amp; Management
-              </li>
-
-              <li>
-                Equality and Diversity
-              </li>
-
-              <li>
-                Basic BSL and Makaton Signing
-              </li>
-
-              <li>
-                Complete SEND Diploma
-              </li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- TEAM -->
-    <section class="team-section" id="team">
-
-      <div class="container">
-
-        <div class="section-title team-title">
-
-          <div>
-
-            <span class="eyebrow">
-              Our People
-            </span>
-
-            <h2>
-              Meet the <span>team.</span>
-            </h2>
-
-          </div>
-
-          <p>
-            A friendly, supportive team dedicated to helping every person
-            achieve their potential.
-          </p>
-
-        </div>
-
-
-        <div class="team-grid">
-
-
-          <!-- LYNDSEY -->
-          <article class="team-card">
-
-            <div class="team-photo">
-
-              <img
-                src="images/Lindsey.png"
-                alt="Lyndsey Curtis"
-              >
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Lyndsey Curtis
-              </h3>
-
-              <span class="team-role">
-                Director
-              </span>
-
-              <p>
-                Lyndsey founded Inspire with a passion for creating the kind of
-                supportive, enjoyable and meaningful day service she wanted for
-                her own brother. She leads the team with a strong belief in
-                every individual's potential.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- JODIE -->
-          <article class="team-card">
-
-            <div class="team-photo">
-
-              <img
-                src="images/Jodie.jpg"
-                alt="Jodie"
-              >
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Jodie C.
-              </h3>
-
-              <span class="team-role">
-                Support Staff &amp; HR
-              </span>
-
-              <p>
-                Jodie has been part of Inspire for six years, joining while
-                training to become a Teaching Assistant. She loves supporting
-                clients, building lasting relationships with individuals and
-                their families, and helping to create the happy, supportive
-                environment at Inspire.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- BILLIE -->
-          <article class="team-card">
-
-            <div class="team-photo">
-
-              <img
-                src="images/Billie.jpg"
-                alt="Billie"
-              >
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Billie
-              </h3>
-
-              <span class="team-role">
-                Support Staff
-              </span>
-
-              <p>
-                Billie joined Inspire in 2021 through a mentorship and is now a
-                full-time member of the support team. Her personal experience
-                supporting family members gives her genuine understanding,
-                compassion and a strong commitment to helping clients thrive.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- MILLIE -->
-          <article class="team-card">
-
-            <div class="team-photo">
-
-              <img
-                src="images/Millie.jpg"
-                alt="Millie"
-              >
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Millie
-              </h3>
-
-              <span class="team-role">
-                Support Staff
-              </span>
-
-              <p>
-                Millie is one of the newer members of the Inspire team and has
-                quickly become a favourite with clients. Her caring nature,
-                energy and personal experience help her bring understanding,
-                compassion and enthusiasm to her role every day.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- TARA -->
-          <article class="team-card">
-
-            <div class="team-photo">
-
-              <img
-                src="images/Tara.jpg"
-                alt="Tara"
-              >
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Tara
-              </h3>
-
-              <span class="team-role">
-                Support Staff
-              </span>
-
-              <p>
-                Tara joined Inspire in 2023 and brings warmth, energy and
-                enthusiasm to the team. She finds it incredibly rewarding to
-                see clients achieve new things, develop their skills and enjoy
-                their time at Inspire.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- TEAM MEMBER 6 -->
-          <article class="team-card">
-
-            <div class="team-placeholder placeholder-blue">
-
-              <span>
-                Team Member
-              </span>
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Team Member
-              </h3>
-
-              <span class="team-role">
-                Support Staff
-              </span>
-
-              <p>
-                More information about this member of the Inspire team will be
-                added soon.
-              </p>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- TEAM MEMBER 7 -->
-          <article class="team-card">
-
-            <div class="team-placeholder placeholder-yellow">
-
-              <span>
-                Team Member
-              </span>
-
-            </div>
-
-            <div class="team-content">
-
-              <h3>
-                Team Member
-              </h3>
-
-              <span class="team-role">
-                Support Staff
-              </span>
-
-              <p>
-                More information about this member of the Inspire team will be
-                added soon.
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- VALUES -->
-    <section class="values-banner">
-
-      <div class="container values-grid">
-
-        <div>
-
-          <span class="values-small">
-            Our approach
-          </span>
-
-          <h2>
-            Different people.<br>
-            Different goals.<br>
-            <span>Endless potential.</span>
-          </h2>
-
-        </div>
-
-
-        <div class="values-copy">
-
-          <p>
-            Everyone who attends Inspire is an individual. We support each
-            person according to their own needs, abilities, interests and
-            ambitions.
-          </p>
-
-          <a href="#contact" class="button button-yellow">
-            Talk to Us
-            <span>→</span>
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- LIFE AT INSPIRE -->
-    <section class="instagram-section" id="instagram">
-
-      <div class="container">
-
-        <div class="instagram-header">
-
-          <div>
-
-            <span class="eyebrow">
-              Follow Our Journey
-            </span>
-
-            <h2>
-              Life at Inspire
-              <span>on Instagram.</span>
-            </h2>
-
-          </div>
-
-
-          <a
-            href="https://www.instagram.com/inspiredayservice/"
-            class="instagram-button"
-            target="_blank"
-            rel="noopener"
-          >
-            Instagram
-            <span>↗</span>
-          </a>
-
-        </div>
-
-
-        <div class="instagram-grid">
-
-          <a
-            href="https://www.instagram.com/inspiredayservice/"
-            target="_blank"
-            rel="noopener"
-            class="instagram-card instagram-card-one"
-          >
-
-            <div class="instagram-card-content">
-              <span>Inspire Day Service</span>
-              <strong>Activities</strong>
-            </div>
-
-          </a>
-
-
-          <a
-            href="https://www.instagram.com/inspiredayservice/"
-            target="_blank"
-            rel="noopener"
-            class="instagram-card instagram-card-two"
-          >
-
-            <div class="instagram-card-content">
-              <span>Inspire Day Service</span>
-              <strong>Friendships</strong>
-            </div>
-
-          </a>
-
-
-          <a
-            href="https://www.instagram.com/inspiredayservice/"
-            target="_blank"
-            rel="noopener"
-            class="instagram-card instagram-card-three"
-          >
-
-            <div class="instagram-card-content">
-              <span>Inspire Day Service</span>
-              <strong>Good Days</strong>
-            </div>
-
-          </a>
-
-
-          <a
-            href="https://www.instagram.com/inspiredayservice/"
-            target="_blank"
-            rel="noopener"
-            class="instagram-card instagram-card-four"
-          >
-
-            <div class="instagram-card-content">
-              <span>Inspire Day Service</span>
-              <strong>New Experiences</strong>
-            </div>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-
-      <div class="container contact-grid">
-
-        <div class="contact-content">
-
-          <span class="eyebrow">
-            Get in Touch
-          </span>
-
-          <h2>
-            We'd love to
-            <span>hear from you.</span>
-          </h2>
-
-          <p class="contact-intro">
-            Whether you are looking for a day service for yourself, a family
-            member or somebody you support, get in touch and we will be happy
-            to answer your questions.
-          </p>
-
-
-          <div class="contact-points">
-
-            <div class="contact-point">
-
-              <div class="contact-point-icon">
-                ✓
-              </div>
-
-              <div>
-                <strong>Ask us anything</strong>
-                <span>
-                  Tell us a little about the support you are looking for.
-                </span>
-              </div>
-
-            </div>
-
-
-            <div class="contact-point">
-
-              <div class="contact-point-icon">
-                ✓
-              </div>
-
-              <div>
-                <strong>Arrange a visit</strong>
-                <span>
-                  Come and meet the team and learn more about Inspire.
-                </span>
-              </div>
-
-            </div>
-
-
-            <div class="contact-point">
-
-              <div class="contact-point-icon">
-                ✓
-              </div>
-
-              <div>
-                <strong>No pressure</strong>
-                <span>
-                  We are happy to simply talk through your options.
-                </span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="form-card">
-
-          <h3>
-            Make an Enquiry
-          </h3>
-
-          <p>
-            Complete the form below and a member of the Inspire team will get
-            back to you.
-          </p>
-
-
-          <form
-            id="enquiryForm"
-            action="#"
-            method="POST"
-          >
-
-            <div class="form-row">
-
-              <div class="form-group">
-
-                <label for="name">
-                  Full Name *
-                </label>
-
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  autocomplete="name"
-                >
-
-              </div>
-
-
-              <div class="form-group">
-
-                <label for="phone">
-                  Phone Number
-                </label>
-
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  autocomplete="tel"
-                >
-
-              </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="email">
-                Email Address *
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-              >
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="reason">
-                What can we help with?
-              </label>
-
-              <select
-                id="reason"
-                name="reason"
-              >
-                <option value="">
-                  Please select
-                </option>
-
-                <option>
-                  General enquiry
-                </option>
-
-                <option>
-                  Looking for a day service
-                </option>
-
-                <option>
-                  Arrange a visit
-                </option>
-
-                <option>
-                  Referral enquiry
-                </option>
-
-                <option>
-                  Other
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label for="message">
-                Message *
-              </label>
-
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-              ></textarea>
-
-            </div>
-
-
-            <button
-              type="submit"
-              class="form-submit"
-            >
-              Send Enquiry
-              <span>→</span>
-            </button>
-
-
-            <p
-              class="form-message"
-              id="formMessage"
-            ></p>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="footer-wave"></div>
-
-
-    <div class="container footer-main">
-
-      <div class="footer-brand">
-
-        <img
-          src="images/Inspire-Logo.png"
-          alt="Inspire Day Service"
-        >
-
-        <p>
-          Supporting adults with learning disabilities and autism to develop
-          skills, confidence, friendships and independence.
-        </p>
 
       </div>
 
 
-      <div class="footer-links">
-
-        <h3>
-          Explore
-        </h3>
-
-        <a href="#about">
-          About Inspire
-        </a>
-
-        <a href="#services">
-          What We Do
-        </a>
-
-        <a href="#team">
-          Meet the Team
-        </a>
-
-        <a href="#instagram">
-          Life at Inspire
-        </a>
-
-        <a href="#contact">
-          Contact
-        </a>
-
-      </div>
-
-
-      <div class="footer-contact">
-
-        <h3>
-          Stay Connected
-        </h3>
-
-        <p>
-          Follow Inspire Day Service to see the latest activities,
-          achievements and adventures.
-        </p>
+      <div class="hero-buttons">
 
         <a
-          href="https://www.instagram.com/inspiredayservice/"
-          target="_blank"
-          rel="noopener"
-          class="footer-instagram"
+          href="#contact"
+          class="button button-primary"
         >
-          Instagram ↗
+          Enquire Now
+          <span>→</span>
+        </a>
+
+        <a
+          href="#programme"
+          class="button button-secondary"
+        >
+          Explore Our Programme
         </a>
 
       </div>
@@ -1203,27 +227,1601 @@
     </div>
 
 
-    <div class="footer-bottom">
 
-      <div class="container footer-bottom-inner">
+    <div class="hero-image-area">
 
-        <p>
-          © <span id="currentYear"></span> Inspire Day Service.
-          All rights reserved.
-        </p>
+      <div class="hero-image-wrap">
 
-        <p class="footer-message">
-          Supporting today. Building brighter tomorrows.
-        </p>
+        <img
+          src="images/Hero.png"
+          alt="Lyndsey from Inspire spending time with a client"
+        >
+
+      </div>
+
+
+      <div class="hero-note">
+
+        <strong>
+          Dream More.
+        </strong>
+
+        <span>
+          Learn More. Do More. Become More.
+        </span>
 
       </div>
 
     </div>
 
-  </footer>
+
+  </div>
+
+</section>
 
 
-  <script src="script.js"></script>
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+  class="intro-section"
+  id="about"
+>
+
+  <div class="container intro-grid">
+
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        About Inspire
+      </span>
+
+
+      <h2>
+
+        Helping every individual
+        <span>reach their potential.</span>
+
+      </h2>
+
+    </div>
+
+
+
+    <div class="intro-copy">
+
+      <p>
+
+        Founded in 2016, Inspire Day Service provides meaningful
+        opportunities for adults aged 16+ with learning disabilities
+        and autism.
+
+      </p>
+
+
+      <p>
+
+        Our qualified and experienced team takes a supportive,
+        person-centred approach, helping each individual develop
+        confidence, practical skills, independence and friendships
+        while enjoying a wide range of learning and social activities.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROGRAMME
+========================================= -->
+
+<section
+  class="programme-section"
+  id="programme"
+>
+
+  <div class="container">
+
+
+    <div class="section-title centred">
+
+      <span class="eyebrow">
+        What We Do
+      </span>
+
+
+      <h2>
+
+        Learning for life.
+        <span>Plenty of fun too.</span>
+
+      </h2>
+
+
+      <p>
+
+        Our programme combines everyday life skills, learning,
+        personal development, work experience and enjoyable
+        social activities.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+      <article class="service-card">
+
+        <div class="large-service-icon">
+          🏠
+        </div>
+
+        <h3>
+          Life Skills
+        </h3>
+
+        <p>
+
+          Practical everyday skills that help people develop
+          confidence and greater independence.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="service-card">
+
+        <div class="large-service-icon">
+          📚
+        </div>
+
+        <h3>
+          Learning &amp; Development
+        </h3>
+
+        <p>
+
+          Educational sessions designed around useful,
+          meaningful skills and individual goals.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="service-card">
+
+        <div class="large-service-icon">
+          💼
+        </div>
+
+        <h3>
+          Work Experience
+        </h3>
+
+        <p>
+
+          Opportunities to gain experience, confidence
+          and valuable workplace skills.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="service-card">
+
+        <div class="large-service-icon">
+          🎳
+        </div>
+
+        <h3>
+          Social Activities
+        </h3>
+
+        <p>
+
+          Days out, sports and activities that create
+          friendships, fun and new experiences.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div class="programme-detail-grid">
+
+
+      <div class="programme-panel">
+
+        <div class="programme-panel-header">
+
+          <span class="programme-icon">
+            ✓
+          </span>
+
+          <div>
+
+            <span class="small-label">
+              Developing Independence
+            </span>
+
+            <h3>
+              Learning &amp; Life Skills
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <div class="programme-list">
+
+          <span>Money handling</span>
+          <span>Public transport &amp; travel</span>
+          <span>Cooking</span>
+          <span>Housekeeping</span>
+          <span>Gardening</span>
+          <span>Shopping</span>
+          <span>Personal hygiene</span>
+          <span>Relationships</span>
+          <span>Wellbeing</span>
+          <span>Health &amp; fitness</span>
+          <span>Basic first aid</span>
+          <span>Road safety awareness</span>
+          <span>Basic maths</span>
+          <span>Basic English</span>
+          <span>PT &amp; nutrition support</span>
+          <span>Work experience</span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="programme-panel programme-panel-yellow">
+
+        <div class="programme-panel-header">
+
+          <span class="programme-icon yellow-programme-icon">
+            ★
+          </span>
+
+          <div>
+
+            <span class="small-label">
+              Friendship &amp; Community
+            </span>
+
+            <h3>
+              Social Activities
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <div class="programme-list">
+
+          <span>Bowling</span>
+          <span>Crazy golf</span>
+          <span>Swimming</span>
+          <span>Various sports</span>
+          <span>Trampolining</span>
+          <span>Karaoke</span>
+          <span>Day trips</span>
+          <span>Community activities</span>
+          <span>And plenty more</span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     DIRECTOR
+========================================= -->
+
+<section class="director-section">
+
+  <div class="container">
+
+
+    <div class="director-heading">
+
+      <span class="eyebrow">
+        Meet Our Director
+      </span>
+
+      <h2>
+        Lyndsey Curtis
+      </h2>
+
+    </div>
+
+
+
+    <div class="director-grid">
+
+
+      <div class="director-photo">
+
+        <div class="director-photo-wrap">
+
+          <img
+            src="images/Lindsey.png"
+            alt="Lyndsey Curtis, Director of Inspire Day Service"
+          >
+
+        </div>
+
+      </div>
+
+
+
+      <div class="director-story">
+
+        <h3>
+          The heart behind Inspire
+        </h3>
+
+
+        <p>
+
+          Lyndsey founded Inspire in April 2016 following many years
+          working within the care sector, specifically supporting
+          individuals with learning disabilities.
+
+        </p>
+
+
+        <p>
+
+          Her understanding comes from both professional and personal
+          experience, having grown up with a sibling with learning
+          disabilities and now raising a son with autism.
+
+        </p>
+
+
+        <p>
+
+          Inspire is much more than a job to Lyndsey. She is passionate
+          about providing care, encouragement and opportunities that
+          help clients learn, grow, enjoy life and reach their potential.
+
+        </p>
+
+
+        <blockquote>
+
+          <span class="quote-mark">
+            “
+          </span>
+
+          <p>
+
+            I absolutely love my job. Seeing our clients progress in
+            life skills, enjoy social activities and build lasting
+            friendships, it’s like one big, supportive family.
+
+          </p>
+
+          <cite>
+            Lyndsey Curtis, Director
+          </cite>
+
+        </blockquote>
+
+      </div>
+
+
+
+      <div class="qualifications">
+
+
+        <div class="qualification-header">
+
+          <div class="qualification-icon">
+            ✓
+          </div>
+
+          <h3>
+            Training &amp; Experience
+          </h3>
+
+        </div>
+
+
+        <ul>
+
+          <li>NVQ / Social Care</li>
+
+          <li>
+            Communication Skills in Care Settings
+          </li>
+
+          <li>
+            Challenging Behaviour
+          </li>
+
+          <li>
+            Safeguarding
+          </li>
+
+          <li>
+            SEND Diploma
+          </li>
+
+          <li>
+            First Aid
+          </li>
+
+          <li>
+            Epilepsy Awareness
+          </li>
+
+          <li>
+            Emergency Medication
+          </li>
+
+          <li>
+            Medication Administration
+          </li>
+
+          <li>
+            Autism Awareness
+          </li>
+
+          <li>
+            Food Hygiene
+          </li>
+
+          <li>
+            Basic BSL &amp; Makaton
+          </li>
+
+        </ul>
+
+
+        <div class="trust-note">
+
+          <strong>
+            All staff hold DBS certificates
+          </strong>
+
+          <span>
+            and are First Aid trained.
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     TEAM
+========================================= -->
+
+<section
+  class="team-section"
+  id="team"
+>
+
+  <div class="container">
+
+
+    <div class="section-title team-title">
+
+
+      <div>
+
+        <span class="eyebrow">
+          Our People
+        </span>
+
+        <h2>
+          Meet the <span>team.</span>
+        </h2>
+
+      </div>
+
+
+      <p>
+
+        A friendly and experienced team dedicated to helping
+        every individual feel supported, valued and included.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="team-grid">
+
+
+      <!-- LYNDSEY -->
+
+      <article class="team-card">
+
+        <div class="team-photo">
+
+          <img
+            src="images/Lindsey.png"
+            alt="Lyndsey Curtis"
+          >
+
+        </div>
+
+
+        <div class="team-content">
+
+          <h3>
+            Lyndsey Curtis
+          </h3>
+
+          <span class="team-role">
+            Director
+          </span>
+
+          <p>
+
+            Lyndsey founded Inspire in 2016 and leads the team with
+            extensive professional and personal experience and a
+            strong belief in every individual's potential.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- JODIE -->
+
+      <article class="team-card">
+
+        <div class="team-photo">
+
+          <img
+            src="images/Jodie.jpg"
+            alt="Jodie"
+          >
+
+        </div>
+
+
+        <div class="team-content">
+
+          <h3>
+            Jodie C.
+          </h3>
+
+          <span class="team-role">
+            Support Staff &amp; HR
+          </span>
+
+          <p>
+
+            Jodie has been part of Inspire for six years. She loves
+            supporting clients, building lasting relationships and
+            helping create the happy and supportive environment
+            at Inspire.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- BILLIE -->
+
+      <article class="team-card">
+
+        <div class="team-photo">
+
+          <img
+            src="images/Billie.jpg"
+            alt="Billie"
+          >
+
+        </div>
+
+
+        <div class="team-content">
+
+          <h3>
+            Billie
+          </h3>
+
+          <span class="team-role">
+            Support Staff
+          </span>
+
+          <p>
+
+            Billie joined Inspire in 2021 through a mentorship.
+            Her personal experience gives her genuine understanding,
+            compassion and a strong commitment to helping clients thrive.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MILLIE -->
+
+      <article class="team-card">
+
+        <div class="team-photo">
+
+          <img
+            src="images/Millie.jpg"
+            alt="Millie"
+          >
+
+        </div>
+
+
+        <div class="team-content">
+
+          <h3>
+            Millie
+          </h3>
+
+          <span class="team-role">
+            Support Staff
+          </span>
+
+          <p>
+
+            Millie's caring nature, enthusiasm and personal experience
+            help her bring warmth, understanding and compassion to
+            the support she provides each day.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- TARA -->
+
+      <article class="team-card">
+
+        <div class="team-photo">
+
+          <img
+            src="images/Tara.jpg"
+            alt="Tara"
+          >
+
+        </div>
+
+
+        <div class="team-content">
+
+          <h3>
+            Tara
+          </h3>
+
+          <span class="team-role">
+            Support Staff
+          </span>
+
+          <p>
+
+            Tara joined Inspire in 2023 and brings warmth, energy
+            and enthusiasm to the team. She loves seeing clients
+            achieve new things and develop their skills.
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PLACEHOLDER -->
+
+      <article class="team-card">
+
+        <div class="team-placeholder placeholder-blue">
+
+          <span>
+            Team Member
+          </span>
+
+        </div>
+
+        <div class="team-content">
+
+          <h3>
+            Team Member
+          </h3>
+
+          <span class="team-role">
+            Support Staff
+          </span>
+
+          <p>
+            Team profile coming soon.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PLACEHOLDER -->
+
+      <article class="team-card">
+
+        <div class="team-placeholder placeholder-yellow">
+
+          <span>
+            Team Member
+          </span>
+
+        </div>
+
+        <div class="team-content">
+
+          <h3>
+            Team Member
+          </h3>
+
+          <span class="team-role">
+            Support Staff
+          </span>
+
+          <p>
+            Team profile coming soon.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SLOGAN BAND
+========================================= -->
+
+<section class="values-banner">
+
+  <div class="container slogan-centre">
+
+    <span class="values-small">
+      The Inspire Approach
+    </span>
+
+
+    <h2>
+
+      Dream More.
+      <span>Learn More.</span>
+      Do More.
+      <span>Become More.</span>
+
+    </h2>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICE INFORMATION / PRICING
+========================================= -->
+
+<section
+  class="service-info-section"
+  id="service-info"
+>
+
+  <div class="container">
+
+
+    <div class="service-info-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          Service Information
+        </span>
+
+        <h2>
+
+          Simple, clear
+          <span>day service information.</span>
+
+        </h2>
+
+      </div>
+
+
+      <p>
+
+        Day rates are based on the support needs of each individual.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="service-facts">
+
+
+      <div class="service-fact">
+
+        <span class="fact-label">
+          Opening Days
+        </span>
+
+        <strong>
+          Monday – Friday
+        </strong>
+
+      </div>
+
+
+
+      <div class="service-fact">
+
+        <span class="fact-label">
+          Service Times
+        </span>
+
+        <strong>
+          9:00am – 3:00pm
+        </strong>
+
+      </div>
+
+
+
+      <div class="service-fact">
+
+        <span class="fact-label">
+          Transport
+        </span>
+
+        <strong>
+          Free within 10 miles*
+        </strong>
+
+      </div>
+
+
+
+      <div class="service-fact">
+
+        <span class="fact-label">
+          Day Rate Includes
+        </span>
+
+        <strong>
+          Lunch &amp; activities
+        </strong>
+
+      </div>
+
+
+    </div>
+
+
+    <p class="transport-note">
+
+      * Free transport is offered subject to availability.
+
+    </p>
+
+
+
+    <div class="pricing-heading">
+
+      <span class="small-label">
+        Day Rates
+      </span>
+
+      <h3>
+        Support tailored to the individual
+      </h3>
+
+    </div>
+
+
+
+    <div class="pricing-grid">
+
+
+      <article class="price-card">
+
+        <span>
+          Low
+        </span>
+
+        <strong>
+          £90
+        </strong>
+
+        <small>
+          + VAT per day
+        </small>
+
+      </article>
+
+
+
+      <article class="price-card featured-price">
+
+        <span>
+          Mid
+        </span>
+
+        <strong>
+          £102
+        </strong>
+
+        <small>
+          + VAT per day
+        </small>
+
+      </article>
+
+
+
+      <article class="price-card">
+
+        <span>
+          High
+        </span>
+
+        <strong>
+          £120
+        </strong>
+
+        <small>
+          + VAT per day
+        </small>
+
+      </article>
+
+
+    </div>
+
+
+
+    <div class="commission-note">
+
+      <span class="commission-icon">
+        ✓
+      </span>
+
+      <p>
+
+        Inspire Day Service is also commissioned by local county councils.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     LIFE AT INSPIRE
+========================================= -->
+
+<section
+  class="instagram-section"
+  id="instagram"
+>
+
+  <div class="container">
+
+
+    <div class="instagram-header">
+
+
+      <div>
+
+        <span class="eyebrow">
+          Follow Our Journey
+        </span>
+
+        <h2>
+
+          Life at
+          <span>Inspire.</span>
+
+        </h2>
+
+      </div>
+
+
+      <a
+        href="https://www.instagram.com/inspiredayservice/"
+        target="_blank"
+        rel="noopener"
+        class="instagram-button"
+      >
+
+        Instagram
+        <span>↗</span>
+
+      </a>
+
+
+    </div>
+
+
+
+    <p class="gallery-intro">
+
+      A few recent moments, activities and achievements from life at Inspire.
+
+    </p>
+
+
+
+    <div class="instagram-grid">
+
+
+      <div class="instagram-card instagram-card-one">
+
+        <div class="instagram-card-content">
+
+          <span>
+            Life at Inspire
+          </span>
+
+          <strong>
+            Activities
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="instagram-card instagram-card-two">
+
+        <div class="instagram-card-content">
+
+          <span>
+            Life at Inspire
+          </span>
+
+          <strong>
+            Friendships
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="instagram-card instagram-card-three">
+
+        <div class="instagram-card-content">
+
+          <span>
+            Life at Inspire
+          </span>
+
+          <strong>
+            New Experiences
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="instagram-card instagram-card-four">
+
+        <div class="instagram-card-content">
+
+          <span>
+            Life at Inspire
+          </span>
+
+          <strong>
+            Good Days
+          </strong>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <p class="private-instagram-note">
+
+      Instagram is private. Follow
+      <strong>@inspiredayservice</strong>
+      to see more.
+
+    </p>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+  class="contact-section"
+  id="contact"
+>
+
+  <div class="container contact-grid">
+
+
+    <div class="contact-content">
+
+      <span class="eyebrow">
+        Get in Touch
+      </span>
+
+
+      <h2>
+
+        We'd love to
+        <span>hear from you.</span>
+
+      </h2>
+
+
+      <p class="contact-intro">
+
+        Whether you are looking for a day service for yourself,
+        a family member or somebody you support, get in touch
+        and we will be happy to answer your questions.
+
+      </p>
+
+
+
+      <div class="contact-points">
+
+
+        <div class="contact-point">
+
+          <div class="contact-point-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Ask us anything
+            </strong>
+
+            <span>
+              Tell us a little about the support you are looking for.
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="contact-point">
+
+          <div class="contact-point-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Arrange a visit
+            </strong>
+
+            <span>
+              Come and meet the team and learn more about Inspire.
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="contact-point">
+
+          <div class="contact-point-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Talk through your options
+            </strong>
+
+            <span>
+              We are happy to discuss individual support requirements.
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="form-card">
+
+
+      <h3>
+        Make an Enquiry
+      </h3>
+
+
+      <p>
+
+        Complete the form below and a member of the Inspire team
+        will get back to you.
+
+      </p>
+
+
+
+      <form
+        id="enquiryForm"
+        action="#"
+        method="POST"
+      >
+
+
+        <div class="form-row">
+
+
+          <div class="form-group">
+
+            <label for="name">
+              Full Name *
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+            >
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email Address *
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label for="reason">
+            What can we help with?
+          </label>
+
+          <select
+            id="reason"
+            name="reason"
+          >
+
+            <option value="">
+              Please select
+            </option>
+
+            <option>
+              General enquiry
+            </option>
+
+            <option>
+              Looking for a day service
+            </option>
+
+            <option>
+              Arrange a visit
+            </option>
+
+            <option>
+              Referral enquiry
+            </option>
+
+            <option>
+              Pricing / support requirements
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label for="message">
+            Message *
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+          ></textarea>
+
+        </div>
+
+
+
+        <button
+          type="submit"
+          class="form-submit"
+        >
+
+          Send Enquiry
+          <span>→</span>
+
+        </button>
+
+
+        <p
+          class="form-message"
+          id="formMessage"
+        ></p>
+
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+  <div class="container footer-main">
+
+
+    <div class="footer-brand">
+
+      <img
+        src="images/Inspire-Logo.png"
+        alt="Inspire Day Service"
+      >
+
+      <p>
+
+        A place to belong, grow and shine,
+        supporting every individual to live life to the fullest.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="footer-links">
+
+      <h3>
+        Explore
+      </h3>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#programme">
+        What We Do
+      </a>
+
+      <a href="#team">
+        Our Team
+      </a>
+
+      <a href="#service-info">
+        Service Info
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+
+
+    <div class="footer-contact">
+
+      <h3>
+        Follow Inspire
+      </h3>
+
+      <p>
+
+        Follow the team to see activities, achievements
+        and everyday life at Inspire.
+
+      </p>
+
+      <a
+        href="https://www.instagram.com/inspiredayservice/"
+        target="_blank"
+        rel="noopener"
+        class="footer-instagram"
+      >
+        @inspiredayservice ↗
+      </a>
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+      <p>
+
+        © <span id="currentYear"></span>
+        Inspire Day Service.
+        All rights reserved.
+
+      </p>
+
+
+      <p class="footer-message">
+
+        Dream More. Learn More. Do More. Become More.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>
