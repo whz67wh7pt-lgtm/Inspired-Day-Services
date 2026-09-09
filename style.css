@@ -78,7 +78,8 @@ select {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: var(--navy);
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -122,6 +123,8 @@ h2 span {
 
   width: 28px;
   height: 4px;
+
+  flex-shrink: 0;
 
   border-radius: 999px;
 
@@ -497,60 +500,37 @@ h2 span {
 
 
 /* =========================================
-   SECTION TITLES
-========================================= */
-
-.section-title {
-  margin-bottom: 29px;
-}
-
-.section-title.centred {
-  max-width: 720px;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  text-align: center;
-}
-
-.section-title.centred .eyebrow {
-  justify-content: center;
-}
-
-.section-title.centred p {
-  margin: 13px auto 0;
-
-  max-width: 620px;
-
-  color: var(--muted);
-}
-
-
-/* Specific fix for WHAT WE DO heading */
-
-.programme-title {
-  max-width: 1050px !important;
-}
-
-.programme-title h2 {
-  white-space: nowrap;
-
-  font-size: clamp(2.4rem, 3.3vw, 3.3rem);
-}
-
-.programme-title p {
-  max-width: 700px !important;
-}
-
-
-/* =========================================
-   PROGRAMME
+   WHAT WE DO
 ========================================= */
 
 .programme-section {
   padding: 50px 0;
 
   background: var(--blue-pale);
+}
+
+.programme-heading {
+  max-width: 1100px;
+
+  margin-bottom: 30px;
+
+  text-align: left;
+}
+
+.programme-heading h2 {
+  max-width: none;
+
+  white-space: nowrap;
+
+  font-size: clamp(2.45rem, 3.3vw, 3.35rem);
+}
+
+.programme-heading p {
+  max-width: 690px;
+
+  margin-top: 13px;
+
+  color: var(--muted);
 }
 
 .services-grid {
@@ -620,7 +600,7 @@ h2 span {
 
   background: var(--white);
 
-  border: 1px solid rgba(43,169,233,0.18);
+  border: 1px solid rgba(43, 169, 233, 0.18);
 }
 
 .programme-panel-yellow {
@@ -685,67 +665,110 @@ h2 span {
 
 
 /* =========================================
-   DIRECTOR
+   OUR PEOPLE
 ========================================= */
 
-.director-section {
+.people-section {
   padding: 50px 0;
+
+  background: var(--white);
 }
 
-.director-heading {
-  margin-bottom: 26px;
+.people-heading {
+  max-width: 760px;
+
+  margin-bottom: 30px;
 }
 
-.director-grid {
+.people-heading p {
+  max-width: 650px;
+
+  margin-top: 13px;
+
+  color: var(--muted);
+}
+
+
+/* FEATURED LYNDSEY */
+
+.founder-feature {
   display: grid;
 
-  grid-template-columns: 0.72fr 1.25fr 1fr;
+  grid-template-columns: 0.76fr 1.24fr;
 
-  gap: 27px;
-}
+  gap: 34px;
 
-.director-photo-wrap {
-  height: 100%;
-  min-height: 520px;
+  padding: 26px;
 
-  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 26px;
 
-  border-radius: 24px;
-
-  background: #eef4f7;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f3fbff
+    );
 
   box-shadow: var(--shadow);
 }
 
-.director-photo-wrap img {
+.founder-image {
+  min-height: 610px;
+
+  overflow: hidden;
+
+  border-radius: 21px;
+
+  background: #edf4f7;
+}
+
+.founder-image img {
+  width: 100%;
   height: 100%;
 
   object-fit: cover;
   object-position: center top;
 }
 
-.director-story {
-  padding: 12px 5px;
+.founder-content {
+  padding: 8px 8px 4px;
 }
 
-.director-story h3 {
-  margin-bottom: 15px;
+.founder-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--blue);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.director-story > p {
+.founder-content > h3 {
+  margin-bottom: 18px;
+
+  font-size: clamp(1.8rem, 2.5vw, 2.55rem);
+}
+
+.founder-content > p {
   color: #50657c;
 
-  font-size: 0.94rem;
+  font-size: 0.95rem;
 }
 
-.director-story > p + p {
+.founder-content > p + p {
   margin-top: 12px;
 }
 
-blockquote {
+.founder-quote {
   margin-top: 20px;
 
-  padding: 20px 22px;
+  padding: 19px 21px;
 
   border-radius: 17px;
 
@@ -767,53 +790,55 @@ blockquote {
   line-height: 0.7;
 }
 
-blockquote p {
-  font-size: 0.93rem;
-
+.founder-quote p {
+  font-size: 0.92rem;
   font-style: italic;
 }
 
-blockquote cite {
+.founder-quote cite {
   display: block;
 
-  margin-top: 9px;
+  margin-top: 8px;
 
   color: var(--navy);
 
-  font-size: 0.83rem;
+  font-size: 0.82rem;
   font-style: normal;
   font-weight: 800;
 }
 
-.qualifications {
-  padding: 24px 22px;
+
+/* TRAINING */
+
+.founder-training {
+  margin-top: 20px;
+
+  padding: 20px;
 
   border: 1px solid rgba(43, 169, 233, 0.18);
-  border-radius: 21px;
+  border-radius: 18px;
 
-  background: linear-gradient(
-    160deg,
-    #f5fcff,
-    #eaf8ff
-  );
+  background: var(--white);
 }
 
-.qualification-header {
+.founder-training-heading {
   display: flex;
   align-items: center;
 
-  gap: 11px;
+  gap: 12px;
 
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
-.qualification-icon {
-  width: 42px;
-  height: 42px;
+.training-check {
+  width: 39px;
+  height: 39px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 
   border-radius: 12px;
 
@@ -823,46 +848,41 @@ blockquote cite {
   font-weight: 900;
 }
 
-.qualifications ul {
-  list-style: none;
+.founder-training h4 {
+  font-size: 1rem;
+}
 
-  display: grid;
+.training-tags {
+  display: flex;
+
+  flex-wrap: wrap;
 
   gap: 7px;
 }
 
-.qualifications li {
-  position: relative;
+.training-tags span {
+  padding: 6px 9px;
 
-  padding-left: 24px;
+  border-radius: 999px;
 
-  color: #37516d;
+  color: #415873;
+  background: var(--blue-pale);
 
-  font-size: 0.84rem;
-}
-
-.qualifications li::before {
-  content: "✓";
-
-  position: absolute;
-  left: 0;
-
-  color: var(--blue);
-
-  font-weight: 900;
+  font-size: 0.74rem;
+  font-weight: 650;
 }
 
 .trust-note {
-  margin-top: 18px;
+  margin-top: 14px;
 
-  padding: 14px;
+  padding: 12px 14px;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
   color: var(--navy);
   background: var(--yellow-light);
 
-  font-size: 0.83rem;
+  font-size: 0.8rem;
 }
 
 .trust-note strong,
@@ -871,26 +891,25 @@ blockquote cite {
 }
 
 
-/* =========================================
-   TEAM
-========================================= */
+/* TEAM */
 
-.team-section {
-  padding: 50px 0;
-
-  background: #fbfdff;
-}
-
-.team-title {
+.team-subheading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 
-  gap: 40px;
+  gap: 35px;
+
+  margin-top: 38px;
+  margin-bottom: 20px;
 }
 
-.team-title p {
-  max-width: 450px;
+.team-subheading h3 {
+  font-size: 1.55rem;
+}
+
+.team-subheading p {
+  max-width: 430px;
 
   color: var(--muted);
 }
@@ -898,7 +917,7 @@ blockquote cite {
 .team-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 18px;
 }
@@ -911,15 +930,16 @@ blockquote cite {
 
   background: var(--white);
 
-  box-shadow: 0 8px 25px rgba(8,43,103,0.05);
+  box-shadow: 0 8px 25px rgba(8, 43, 103, 0.05);
 }
 
 .team-photo,
 .team-placeholder {
-  height: 215px;
+  height: 245px;
 }
 
 .team-photo img {
+  width: 100%;
   height: 100%;
 
   object-fit: cover;
@@ -944,11 +964,11 @@ blockquote cite {
 }
 
 .team-content {
-  padding: 16px;
+  padding: 17px;
 }
 
 .team-content h3 {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
 }
 
 .team-role {
@@ -1022,23 +1042,24 @@ blockquote cite {
 }
 
 .service-info-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  max-width: 830px;
 
-  gap: 40px;
-
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 }
 
-.service-info-heading > div {
-  max-width: 700px;
+.service-info-heading h2 {
+  max-width: 790px;
 }
 
 .service-info-heading p {
-  max-width: 390px;
+  max-width: 690px;
+
+  margin-top: 15px;
 
   color: var(--muted);
+
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .service-facts {
@@ -1122,7 +1143,7 @@ blockquote cite {
 
 
 /* =========================================
-   LIFE AT INSPIRE GALLERY
+   GALLERY
 ========================================= */
 
 .gallery-section {
@@ -1224,11 +1245,12 @@ blockquote cite {
 .contact-section {
   padding: 52px 0;
 
-  background: linear-gradient(
-    145deg,
-    #effaff,
-    #fffbed
-  );
+  background:
+    linear-gradient(
+      145deg,
+      #effaff,
+      #fffbed
+    );
 }
 
 .contact-grid {
@@ -1295,7 +1317,7 @@ blockquote cite {
 .form-card {
   padding: 30px;
 
-  border: 1px solid rgba(43,169,233,0.2);
+  border: 1px solid rgba(43, 169, 233, 0.2);
   border-radius: 22px;
 
   background: var(--white);
@@ -1394,13 +1416,12 @@ blockquote cite {
 .footer-main {
   display: grid;
 
-  grid-template-columns: 1.35fr 0.65fr 0.9fr;
+  grid-template-columns: 1.3fr 0.65fr 0.9fr;
 
   gap: 70px;
 
   align-items: start;
 
-  padding-top: 5px;
   padding-bottom: 34px;
 }
 
@@ -1410,21 +1431,36 @@ blockquote cite {
   align-self: start;
 }
 
-.footer-brand {
-  margin-top: -16px;
+
+/*
+   The PNG contains transparent space.
+   This wrapper crops the artwork itself rather than moving
+   the entire left-hand footer column.
+*/
+
+.footer-logo-crop {
+  width: 190px;
+  height: 130px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  margin-bottom: 10px;
 }
 
-.footer-brand img {
-  width: 165px;
-  height: auto;
+.footer-logo-crop img {
+  position: absolute;
 
-  margin: 0 0 7px 0;
+  width: 210px;
+  max-width: none;
+
+  left: -10px;
+  top: -38px;
 }
 
 .footer-brand p {
-  max-width: 400px;
-
-  margin-top: 0;
+  max-width: 410px;
 
   color: var(--muted);
 
@@ -1441,7 +1477,7 @@ blockquote cite {
 
 .footer-links h3,
 .footer-contact h3 {
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
 
   font-size: 1rem;
 }
@@ -1455,7 +1491,7 @@ blockquote cite {
 }
 
 .footer-contact p {
-  max-width: 320px;
+  max-width: 330px;
 
   color: var(--muted);
 
@@ -1513,20 +1549,16 @@ blockquote cite {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .director-grid {
+  .programme-heading h2 {
+    white-space: normal;
+  }
+
+  .founder-feature {
     grid-template-columns: 0.8fr 1.2fr;
   }
 
-  .qualifications {
-    grid-column: 1 / -1;
-  }
-
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .programme-title h2 {
-    font-size: clamp(2.2rem, 4.5vw, 3rem);
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }
@@ -1582,7 +1614,7 @@ blockquote cite {
   .hero-grid,
   .intro-grid,
   .programme-detail-grid,
-  .director-grid,
+  .founder-feature,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1591,28 +1623,19 @@ blockquote cite {
     min-height: 470px;
   }
 
-  .programme-detail-grid {
-    gap: 14px;
+  .founder-image {
+    min-height: 570px;
+    max-height: 650px;
   }
 
-  .programme-title h2 {
-    white-space: normal;
-  }
-
-  .team-title,
-  .service-info-heading,
+  .team-subheading,
   .gallery-heading {
     display: block;
   }
 
-  .team-title p,
-  .service-info-heading p,
+  .team-subheading p,
   .gallery-heading p {
-    margin-top: 14px;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    margin-top: 12px;
   }
 
   .service-facts {
@@ -1631,8 +1654,6 @@ blockquote cite {
 
   .footer-brand {
     grid-column: 1 / -1;
-
-    margin-top: -10px;
   }
 
 }
@@ -1670,14 +1691,9 @@ blockquote cite {
     border-radius: 26px;
   }
 
-  .hero-note {
-    right: 4px;
-  }
-
   .intro-section,
   .programme-section,
-  .director-section,
-  .team-section,
+  .people-section,
   .service-info-section,
   .gallery-section,
   .contact-section {
@@ -1687,6 +1703,14 @@ blockquote cite {
   .services-grid,
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .founder-feature {
+    padding: 18px;
+  }
+
+  .founder-image {
+    min-height: 470px;
   }
 
   .team-photo,
@@ -1720,8 +1744,10 @@ blockquote cite {
 
   .footer-brand {
     grid-column: auto;
+  }
 
-    margin-top: -8px;
+  .footer-logo-crop {
+    width: 175px;
   }
 
   .footer-bottom-inner {
