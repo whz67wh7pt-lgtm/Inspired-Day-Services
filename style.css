@@ -28,7 +28,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+
+  /*
+    Desktop sticky header is 80px high.
+    This makes anchor links stop cleanly below it.
+  */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -194,11 +199,13 @@ h2 span {
   top: 0;
   z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.96);
+  /*
+    Fully solid background prevents sections showing
+    through the header while smooth scrolling.
+  */
+  background: #ffffff;
 
   border-bottom: 1px solid rgba(8, 43, 103, 0.08);
-
-  backdrop-filter: blur(14px);
 }
 
 .header-inner {
@@ -691,7 +698,9 @@ h2 span {
 }
 
 
-/* FEATURED LYNDSEY */
+/* =========================================
+   FEATURED LYNDSEY
+========================================= */
 
 .founder-feature {
   display: grid;
@@ -810,7 +819,9 @@ h2 span {
 }
 
 
-/* TRAINING */
+/* =========================================
+   TRAINING
+========================================= */
 
 .founder-training {
   margin-top: 20px;
@@ -893,7 +904,9 @@ h2 span {
 }
 
 
-/* TEAM */
+/* =========================================
+   TEAM
+========================================= */
 
 .team-subheading {
   display: flex;
@@ -1262,6 +1275,9 @@ h2 span {
 
   gap: 65px;
 
+  /*
+    Top-aligns GET IN TOUCH with the enquiry card.
+  */
   align-items: start;
 }
 
@@ -1444,9 +1460,8 @@ h2 span {
 
 
 /*
-  We leave the logo completely untouched.
-  These two text columns are simply lowered so their
-  headings visually align with the logo artwork.
+  Logo stays completely untouched.
+  The two text columns are lowered to align visually.
 */
 
 .footer-links,
@@ -1553,6 +1568,13 @@ h2 span {
 ========================================= */
 
 @media (max-width: 820px) {
+
+  html {
+    /*
+      Mobile/tablet header is 72px high.
+    */
+    scroll-padding-top: 72px;
+  }
 
   .container {
     width: min(100% - 34px, 1180px);
