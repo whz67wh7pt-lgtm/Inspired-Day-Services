@@ -13,6 +13,12 @@
   --border: #dceaf2;
 
   --shadow: 0 14px 36px rgba(8, 43, 103, 0.08);
+
+  /*
+    JavaScript updates this automatically
+    to the REAL height of the sticky header.
+  */
+  --header-height: 180px;
 }
 
 
@@ -27,8 +33,12 @@
 }
 
 html {
+  /*
+    Smooth scrolling is handled by JavaScript.
+    This prevents CSS and JavaScript fighting
+    over the same scroll animation.
+  */
   scroll-behavior: auto;
-  scroll-padding-top: 0;
 }
 
 body {
@@ -69,6 +79,28 @@ select {
 .container {
   width: min(1180px, calc(100% - 48px));
   margin-inline: auto;
+}
+
+
+/* =========================================
+   SECTION SCROLL POSITION
+========================================= */
+
+/*
+  scrollIntoView() honours scroll-margin-top.
+
+  JavaScript constantly updates --header-height,
+  so the section always stops beneath the
+  actual sticky navigation.
+*/
+
+#home,
+#about,
+#programme,
+#team,
+#service-info,
+#contact {
+  scroll-margin-top: calc(var(--header-height) + 8px);
 }
 
 
