@@ -478,17 +478,19 @@ h2 span {
   padding: 48px 0;
 }
 
-.intro-grid {
-  display: grid;
+.intro-content {
+  max-width: 850px;
+}
 
-  grid-template-columns: 1fr 0.85fr;
-
-  align-items: center;
-
-  gap: 70px;
+.intro-content h2 {
+  max-width: 820px;
 }
 
 .intro-copy {
+  max-width: 720px;
+
+  margin-top: 18px;
+
   color: #52677e;
 
   font-size: 1.03rem;
@@ -1425,38 +1427,11 @@ h2 span {
   padding-bottom: 34px;
 }
 
-.footer-brand,
-.footer-links,
-.footer-contact {
-  align-self: start;
-}
+.footer-brand img {
+  width: 165px;
+  height: auto;
 
-
-/*
-   The PNG contains transparent space.
-   This wrapper crops the artwork itself rather than moving
-   the entire left-hand footer column.
-*/
-
-.footer-logo-crop {
-  width: 190px;
-  height: 130px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  margin-bottom: 10px;
-}
-
-.footer-logo-crop img {
-  position: absolute;
-
-  width: 210px;
-  max-width: none;
-
-  left: -10px;
-  top: -38px;
+  margin-bottom: 15px;
 }
 
 .footer-brand p {
@@ -1467,12 +1442,21 @@ h2 span {
   font-size: 0.88rem;
 }
 
+
+/*
+  We leave the logo completely untouched.
+  These two text columns are simply lowered so their
+  headings visually align with the logo artwork.
+*/
+
 .footer-links,
 .footer-contact {
   display: flex;
   flex-direction: column;
 
   align-items: flex-start;
+
+  padding-top: 28px;
 }
 
 .footer-links h3,
@@ -1612,7 +1596,6 @@ h2 span {
   }
 
   .hero-grid,
-  .intro-grid,
   .programme-detail-grid,
   .founder-feature,
   .contact-grid {
@@ -1654,6 +1637,11 @@ h2 span {
 
   .footer-brand {
     grid-column: 1 / -1;
+  }
+
+  .footer-links,
+  .footer-contact {
+    padding-top: 0;
   }
 
 }
@@ -1746,8 +1734,9 @@ h2 span {
     grid-column: auto;
   }
 
-  .footer-logo-crop {
-    width: 175px;
+  .footer-links,
+  .footer-contact {
+    padding-top: 0;
   }
 
   .footer-bottom-inner {
