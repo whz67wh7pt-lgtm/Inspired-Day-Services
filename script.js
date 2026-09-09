@@ -18,7 +18,8 @@ if ("scrollRestoration" in history) {
 // MAIN ELEMENTS
 // =========================================
 
-const root = document.documentElement;
+const root =
+  document.documentElement;
 
 const header =
   document.querySelector(".site-header");
@@ -32,7 +33,7 @@ const mainNav =
 
 
 // =========================================
-// MEASURE THE REAL HEADER HEIGHT
+// MEASURE REAL HEADER HEIGHT
 // =========================================
 
 function updateHeaderHeight() {
@@ -56,14 +57,8 @@ function updateHeaderHeight() {
 }
 
 
-
-// Measure immediately
-
 updateHeaderHeight();
 
-
-
-// Measure again once everything has loaded
 
 window.addEventListener(
   "load",
@@ -71,17 +66,12 @@ window.addEventListener(
 );
 
 
-
-// Update if browser width changes
-
 window.addEventListener(
   "resize",
   updateHeaderHeight
 );
 
 
-
-// Automatically detect any header-size change
 
 if (
   header &&
@@ -156,16 +146,10 @@ function closeMobileMenu() {
 
 
 // =========================================
-// CANCEL ANY EXISTING SMOOTH SCROLL
+// CANCEL CURRENT SCROLL
 // =========================================
 
 function cancelCurrentScroll() {
-
-  /*
-    A new immediate scroll to the page's current
-    position interrupts any existing browser
-    smooth-scroll animation.
-  */
 
   window.scrollTo({
     top: window.scrollY,
@@ -178,7 +162,7 @@ function cancelCurrentScroll() {
 
 
 // =========================================
-// SCROLL TO A SECTION
+// GO TO SECTION
 // =========================================
 
 function goToSection(targetId) {
@@ -197,11 +181,6 @@ function goToSection(targetId) {
   cancelCurrentScroll();
 
 
-  /*
-    HOME goes to the absolute top rather
-    than using scroll-margin.
-  */
-
   if (targetId === "#home") {
 
     window.scrollTo({
@@ -214,15 +193,6 @@ function goToSection(targetId) {
 
   }
 
-
-  /*
-    scrollIntoView honours the CSS
-    scroll-margin-top value.
-
-    Because --header-height is measured
-    dynamically, there are no guessed
-    80px / 185px offsets.
-  */
 
   target.scrollIntoView({
     behavior: "smooth",
@@ -237,16 +207,6 @@ function goToSection(targetId) {
 // =========================================
 // ALL INTERNAL LINKS
 // =========================================
-//
-// This handles:
-//
-// Header navigation
-// Footer Explore navigation
-// Logo
-// Enquire Now buttons
-// Explore Our Programme button
-// Any other future # section link
-//
 
 document.addEventListener(
   "click",
@@ -288,12 +248,6 @@ document.addEventListener(
     closeMobileMenu();
 
 
-    /*
-      Wait one frame so that if the mobile
-      navigation has just closed, the browser
-      can finish updating the layout first.
-    */
-
     requestAnimationFrame(function () {
 
       updateHeaderHeight();
@@ -304,10 +258,8 @@ document.addEventListener(
 
 
     /*
-      Do NOT put #team / #about etc into the URL.
-
-      This prevents the site reloading halfway
-      down the page later.
+      Remove any section hash from the URL.
+      This stops the page reopening halfway down.
     */
 
     if (window.location.hash) {
@@ -327,7 +279,7 @@ document.addEventListener(
 
 
 // =========================================
-// ALWAYS LOAD THE SITE AT THE TOP
+// ALWAYS LOAD AT TOP
 // =========================================
 
 function resetPagePosition() {
@@ -354,8 +306,6 @@ function resetPagePosition() {
 
 
 
-// Normal page load
-
 window.addEventListener(
   "load",
   function () {
@@ -371,8 +321,6 @@ window.addEventListener(
 );
 
 
-
-// Browser back / forward cache
 
 window.addEventListener(
   "pageshow",
@@ -416,10 +364,8 @@ if (currentYear) {
 // ENQUIRY FORM
 // =========================================
 //
-// Temporary behaviour for the test site.
-//
-// We can connect the form to Inspire's
-// receiving email address later.
+// Still test behaviour at this stage.
+// We'll connect it to Formspree afterwards.
 //
 
 const enquiryForm =
