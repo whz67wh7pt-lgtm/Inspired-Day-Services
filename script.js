@@ -5,6 +5,16 @@
 
 
 // =========================================
+// STOP BROWSER RESTORING OLD SCROLL POSITION
+// =========================================
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+
+
+// =========================================
 // MOBILE MENU
 // =========================================
 
@@ -51,20 +61,22 @@ function getHeaderHeight() {
 // SCROLL TO SECTION
 // =========================================
 
-function scrollToSection(target, targetId, smooth = true) {
+function goToSection(targetId) {
+
+  const target = document.querySelector(targetId);
 
   if (!target) {
     return;
   }
 
 
-  // HOME ALWAYS RETURNS TO THE VERY TOP
+  // HOME ALWAYS GOES TO ABSOLUTE TOP
 
   if (targetId === "#home") {
 
     window.scrollTo({
       top: 0,
-      behavior: smooth ? "smooth" : "auto"
+      behavior: "smooth"
     });
 
     return;
@@ -78,20 +90,21 @@ function scrollToSection(target, targetId, smooth = true) {
     window.scrollY;
 
 
-  // Small visual gap below sticky header
+  /*
+    This positions the actual start of the section
+    immediately underneath the sticky header.
 
-  const extraGap = 6;
-
+    The section's own padding then gives the heading
+    its normal breathing room.
+  */
 
   const destination =
-    targetTop -
-    headerHeight -
-    extraGap;
+    targetTop - headerHeight;
 
 
   window.scrollTo({
-    top: destination,
-    behavior: smooth ? "smooth" : "auto"
+    top: Math.max(destination, 0),
+    behavior: "smooth"
   });
 
 }
@@ -102,14 +115,14 @@ function scrollToSection(target, targetId, smooth = true) {
 // ALL INTERNAL LINKS
 // =========================================
 //
-// This works for:
+// One handler controls:
 //
-// Header navigation
-// Footer navigation
+// Header menu
+// Footer menu
 // Logo
-// Enquire Now buttons
+// Enquire Now
 // Explore Our Programme
-// Any future #section links
+// Any other # links
 //
 
 document.addEventListener("click", function (event) {
@@ -132,10 +145,7 @@ document.addEventListener("click", function (event) {
   }
 
 
-  const target = document.querySelector(targetId);
-
-
-  if (!target) {
+  if (!document.querySelector(targetId)) {
     return;
   }
 
@@ -143,11 +153,12 @@ document.addEventListener("click", function (event) {
   event.preventDefault();
 
 
-  // Close mobile navigation if it is open
+  // Close mobile menu
 
   if (mainNav) {
     mainNav.classList.remove("open");
   }
+
 
   if (menuToggle) {
 
@@ -160,71 +171,65 @@ document.addEventListener("click", function (event) {
 
 
   /*
-    Allow the mobile menu/layout to close
-    before measuring the final header height.
+    Wait until mobile menu/layout has finished closing
+    before measuring the header.
   */
 
   requestAnimationFrame(function () {
 
-    scrollToSection(
-      target,
-      targetId,
-      true
-    );
+    goToSection(targetId);
 
   });
-
-
-  history.replaceState(
-    null,
-    "",
-    targetId
-  );
 
 });
 
 
 
 // =========================================
-// HANDLE DIRECT LINKS WITH HASH
+// ALWAYS OPEN SITE AT TOP
 // =========================================
 //
-// Example:
-//
-// website/#team
-// website/#contact
+// We deliberately do NOT retain #about, #team etc.
+// in the URL. This prevents the site reopening
+// halfway down the page after a refresh.
 //
 
 window.addEventListener("load", function () {
 
-  const targetId = window.location.hash;
+  if (window.location.hash) {
 
-
-  if (
-    !targetId ||
-    targetId === "#"
-  ) {
-    return;
-  }
-
-
-  const target = document.querySelector(targetId);
-
-
-  if (!target) {
-    return;
-  }
-
-
-  setTimeout(function () {
-
-    scrollToSection(
-      target,
-      targetId,
-      false
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search
     );
 
-  }, 100);
+  }
+
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "auto"
+  });
+
+});
+
+
+
+// Also handles browser back/forward cache
+
+window.addEventListener("pageshow", function (event) {
+
+  if (event.persisted) {
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+
+  }
 
 });
 
@@ -234,8 +239,7 @@ window.addEventListener("load", function () {
 // CURRENT YEAR
 // =========================================
 
-const currentYear =
-  document.getElementById("currentYear");
+const currentYear = document.getElementById("currentYear");
 
 
 if (currentYear) {
@@ -250,10 +254,6 @@ if (currentYear) {
 // =========================================
 // ENQUIRY FORM
 // =========================================
-//
-// Temporary test behaviour until the form
-// is connected to Inspire's actual email.
-//
 
 const enquiryForm =
   document.getElementById("enquiryForm");
