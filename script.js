@@ -5,7 +5,7 @@
 
 
 // =========================================
-// STOP BROWSER RESTORING OLD SCROLL POSITION
+// STOP BROWSER RESTORING AN OLD POSITION
 // =========================================
 
 if ("scrollRestoration" in history) {
@@ -15,145 +15,127 @@ if ("scrollRestoration" in history) {
 
 
 // =========================================
+// MAIN ELEMENTS
+// =========================================
+
+const root = document.documentElement;
+
+const header =
+  document.querySelector(".site-header");
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const mainNav =
+  document.getElementById("mainNav");
+
+
+
+// =========================================
+// MEASURE THE REAL HEADER HEIGHT
+// =========================================
+
+function updateHeaderHeight() {
+
+  if (!header) {
+    return;
+  }
+
+
+  const height =
+    Math.ceil(
+      header.getBoundingClientRect().height
+    );
+
+
+  root.style.setProperty(
+    "--header-height",
+    `${height}px`
+  );
+
+}
+
+
+
+// Measure immediately
+
+updateHeaderHeight();
+
+
+
+// Measure again once everything has loaded
+
+window.addEventListener(
+  "load",
+  updateHeaderHeight
+);
+
+
+
+// Update if browser width changes
+
+window.addEventListener(
+  "resize",
+  updateHeaderHeight
+);
+
+
+
+// Automatically detect any header-size change
+
+if (
+  header &&
+  "ResizeObserver" in window
+) {
+
+  const headerObserver =
+    new ResizeObserver(function () {
+
+      updateHeaderHeight();
+
+    });
+
+
+  headerObserver.observe(header);
+
+}
+
+
+
+// =========================================
 // MOBILE MENU
 // =========================================
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+if (
+  menuToggle &&
+  mainNav
+) {
+
+  menuToggle.addEventListener(
+    "click",
+    function () {
+
+      const isOpen =
+        mainNav.classList.toggle("open");
 
 
-if (menuToggle && mainNav) {
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
 
-  menuToggle.addEventListener("click", function () {
-
-    const isOpen = mainNav.classList.toggle("open");
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      isOpen ? "true" : "false"
-    );
-
-  });
-
-}
-
-
-
-// =========================================
-// GET ACTUAL HEADER HEIGHT
-// =========================================
-
-function getHeaderHeight() {
-
-  const header = document.querySelector(".site-header");
-
-  if (!header) {
-    return 0;
-  }
-
-  return header.getBoundingClientRect().height;
+    }
+  );
 
 }
 
 
 
 // =========================================
-// SCROLL TO SECTION
+// CLOSE MOBILE MENU
 // =========================================
 
-function goToSection(targetId) {
-
-  const target = document.querySelector(targetId);
-
-  if (!target) {
-    return;
-  }
-
-
-  // HOME ALWAYS GOES TO ABSOLUTE TOP
-
-  if (targetId === "#home") {
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    return;
-  }
-
-
-  const headerHeight = getHeaderHeight();
-
-  const targetTop =
-    target.getBoundingClientRect().top +
-    window.scrollY;
-
-
-  /*
-    This positions the actual start of the section
-    immediately underneath the sticky header.
-
-    The section's own padding then gives the heading
-    its normal breathing room.
-  */
-
-  const destination =
-    targetTop - headerHeight;
-
-
-  window.scrollTo({
-    top: Math.max(destination, 0),
-    behavior: "smooth"
-  });
-
-}
-
-
-
-// =========================================
-// ALL INTERNAL LINKS
-// =========================================
-//
-// One handler controls:
-//
-// Header menu
-// Footer menu
-// Logo
-// Enquire Now
-// Explore Our Programme
-// Any other # links
-//
-
-document.addEventListener("click", function (event) {
-
-  const link = event.target.closest('a[href^="#"]');
-
-  if (!link) {
-    return;
-  }
-
-
-  const targetId = link.getAttribute("href");
-
-
-  if (
-    !targetId ||
-    targetId === "#"
-  ) {
-    return;
-  }
-
-
-  if (!document.querySelector(targetId)) {
-    return;
-  }
-
-
-  event.preventDefault();
-
-
-  // Close mobile menu
+function closeMobileMenu() {
 
   if (mainNav) {
     mainNav.classList.remove("open");
@@ -169,39 +151,194 @@ document.addEventListener("click", function (event) {
 
   }
 
+}
+
+
+
+// =========================================
+// CANCEL ANY EXISTING SMOOTH SCROLL
+// =========================================
+
+function cancelCurrentScroll() {
 
   /*
-    Wait until mobile menu/layout has finished closing
-    before measuring the header.
+    A new immediate scroll to the page's current
+    position interrupts any existing browser
+    smooth-scroll animation.
   */
 
-  requestAnimationFrame(function () {
-
-    goToSection(targetId);
-
+  window.scrollTo({
+    top: window.scrollY,
+    left: window.scrollX,
+    behavior: "auto"
   });
 
-});
+}
 
 
 
 // =========================================
-// ALWAYS OPEN SITE AT TOP
+// SCROLL TO A SECTION
+// =========================================
+
+function goToSection(targetId) {
+
+  const target =
+    document.querySelector(targetId);
+
+
+  if (!target) {
+    return;
+  }
+
+
+  updateHeaderHeight();
+
+  cancelCurrentScroll();
+
+
+  /*
+    HOME goes to the absolute top rather
+    than using scroll-margin.
+  */
+
+  if (targetId === "#home") {
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+
+    return;
+
+  }
+
+
+  /*
+    scrollIntoView honours the CSS
+    scroll-margin-top value.
+
+    Because --header-height is measured
+    dynamically, there are no guessed
+    80px / 185px offsets.
+  */
+
+  target.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest"
+  });
+
+}
+
+
+
+// =========================================
+// ALL INTERNAL LINKS
 // =========================================
 //
-// We deliberately do NOT retain #about, #team etc.
-// in the URL. This prevents the site reopening
-// halfway down the page after a refresh.
+// This handles:
+//
+// Header navigation
+// Footer Explore navigation
+// Logo
+// Enquire Now buttons
+// Explore Our Programme button
+// Any other future # section link
 //
 
-window.addEventListener("load", function () {
+document.addEventListener(
+  "click",
+  function (event) {
+
+    const link =
+      event.target.closest('a[href^="#"]');
+
+
+    if (!link) {
+      return;
+    }
+
+
+    const targetId =
+      link.getAttribute("href");
+
+
+    if (
+      !targetId ||
+      targetId === "#"
+    ) {
+      return;
+    }
+
+
+    const target =
+      document.querySelector(targetId);
+
+
+    if (!target) {
+      return;
+    }
+
+
+    event.preventDefault();
+
+
+    closeMobileMenu();
+
+
+    /*
+      Wait one frame so that if the mobile
+      navigation has just closed, the browser
+      can finish updating the layout first.
+    */
+
+    requestAnimationFrame(function () {
+
+      updateHeaderHeight();
+
+      goToSection(targetId);
+
+    });
+
+
+    /*
+      Do NOT put #team / #about etc into the URL.
+
+      This prevents the site reloading halfway
+      down the page later.
+    */
+
+    if (window.location.hash) {
+
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname +
+        window.location.search
+      );
+
+    }
+
+  }
+);
+
+
+
+// =========================================
+// ALWAYS LOAD THE SITE AT THE TOP
+// =========================================
+
+function resetPagePosition() {
 
   if (window.location.hash) {
 
     history.replaceState(
       null,
       "",
-      window.location.pathname + window.location.search
+      window.location.pathname +
+      window.location.search
     );
 
   }
@@ -213,25 +350,48 @@ window.addEventListener("load", function () {
     behavior: "auto"
   });
 
-});
+}
 
 
 
-// Also handles browser back/forward cache
+// Normal page load
 
-window.addEventListener("pageshow", function (event) {
+window.addEventListener(
+  "load",
+  function () {
 
-  if (event.persisted) {
+    updateHeaderHeight();
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto"
-    });
+    setTimeout(
+      resetPagePosition,
+      0
+    );
 
   }
+);
 
-});
+
+
+// Browser back / forward cache
+
+window.addEventListener(
+  "pageshow",
+  function (event) {
+
+    updateHeaderHeight();
+
+
+    if (event.persisted) {
+
+      setTimeout(
+        resetPagePosition,
+        0
+      );
+
+    }
+
+  }
+);
 
 
 
@@ -239,7 +399,8 @@ window.addEventListener("pageshow", function (event) {
 // CURRENT YEAR
 // =========================================
 
-const currentYear = document.getElementById("currentYear");
+const currentYear =
+  document.getElementById("currentYear");
 
 
 if (currentYear) {
@@ -254,6 +415,12 @@ if (currentYear) {
 // =========================================
 // ENQUIRY FORM
 // =========================================
+//
+// Temporary behaviour for the test site.
+//
+// We can connect the form to Inspire's
+// receiving email address later.
+//
 
 const enquiryForm =
   document.getElementById("enquiryForm");
@@ -283,7 +450,8 @@ if (
       }
 
 
-      formMessage.style.display = "block";
+      formMessage.style.display =
+        "block";
 
 
       formMessage.textContent =
