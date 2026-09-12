@@ -361,12 +361,8 @@ if (currentYear) {
 
 
 // =========================================
-// ENQUIRY FORM
+// ENQUIRY FORM - FORMSPREE
 // =========================================
-//
-// Still test behaviour at this stage.
-// We'll connect it to Formspree afterwards.
-//
 
 const enquiryForm =
   document.getElementById("enquiryForm");
@@ -382,7 +378,7 @@ if (
 
   enquiryForm.addEventListener(
     "submit",
-    function (event) {
+    async function (event) {
 
       event.preventDefault();
 
@@ -396,15 +392,115 @@ if (
       }
 
 
-      formMessage.style.display =
-        "block";
+      const submitButton =
+        enquiryForm.querySelector(
+          ".form-submit"
+        );
 
+
+      if (submitButton) {
+
+        submitButton.disabled =
+          true;
+
+        submitButton.innerHTML =
+          "Sending...";
+
+      }
+
+
+      formMessage.style.display =
+        "none";
 
       formMessage.textContent =
-        "Thank you. Your enquiry form is working correctly. We just need to connect it to Inspire's email address before the site goes live.";
+        "";
+
+      formMessage.classList.remove(
+        "success",
+        "error"
+      );
 
 
-      enquiryForm.reset();
+      try {
+
+        const response =
+          await fetch(
+            "https://formspree.io/f/xljekkva",
+            {
+              method: "POST",
+              body: new FormData(
+                enquiryForm
+              ),
+              headers: {
+                Accept: "application/json"
+              }
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Form submission failed"
+          );
+
+        }
+
+
+        enquiryForm.reset();
+
+
+        formMessage.textContent =
+          "Thank you. Your enquiry has been sent and a member of the Inspire team will be in touch.";
+
+
+        formMessage.classList.add(
+          "success"
+        );
+
+
+        formMessage.style.display =
+          "block";
+
+      }
+
+
+      catch (error) {
+
+        console.error(
+          "Formspree submission error:",
+          error
+        );
+
+
+        formMessage.textContent =
+          "Sorry, there was a problem sending your enquiry. Please try again.";
+
+
+        formMessage.classList.add(
+          "error"
+        );
+
+
+        formMessage.style.display =
+          "block";
+
+      }
+
+
+      finally {
+
+        if (submitButton) {
+
+          submitButton.disabled =
+            false;
+
+          submitButton.innerHTML =
+            'Send Enquiry <span>→</span>';
+
+        }
+
+      }
 
     }
   );
