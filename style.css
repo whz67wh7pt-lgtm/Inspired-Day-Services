@@ -18,6 +18,10 @@
 }
 
 
+/* =========================================
+   RESET
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +72,10 @@ select {
 }
 
 
+/* =========================================
+   SECTION SCROLL POSITION
+========================================= */
+
 #home,
 #about,
 #programme,
@@ -77,6 +85,10 @@ select {
   scroll-margin-top: calc(var(--header-height) + 8px);
 }
 
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
 h1,
 h2,
@@ -136,6 +148,10 @@ h2 span {
 }
 
 
+/* =========================================
+   BUTTONS
+========================================= */
+
 .button {
   min-height: 49px;
   display: inline-flex;
@@ -163,6 +179,10 @@ h2 span {
   border: 2px solid var(--border);
 }
 
+
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   position: sticky;
@@ -231,6 +251,10 @@ h2 span {
   background: var(--navy);
 }
 
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   position: relative;
@@ -335,7 +359,7 @@ h2 span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center top;
 }
 
 .hero-note {
@@ -383,23 +407,25 @@ h2 span {
 }
 
 
-/* ABOUT */
+/* =========================================
+   ABOUT
+========================================= */
 
 .intro-section {
   padding: 48px 0;
 }
 
 .intro-content {
-  max-width: 980px;
-}
-
-.intro-content h2 {
   max-width: 900px;
 }
 
+.intro-content h2 {
+  max-width: 820px;
+}
+
 .intro-copy {
-  max-width: 760px;
-  margin-top: 22px;
+  max-width: 700px;
+  margin-top: 20px;
   color: #52677e;
   font-size: 1.03rem;
   line-height: 1.7;
@@ -409,6 +435,10 @@ h2 span {
   margin-top: 18px;
 }
 
+
+/* =========================================
+   WHAT WE DO
+========================================= */
 
 .programme-section {
   padding: 50px 0;
@@ -535,6 +565,10 @@ h2 span {
 }
 
 
+/* =========================================
+   OUR PEOPLE
+========================================= */
+
 .people-section {
   padding: 50px 0;
   background: var(--white);
@@ -551,6 +585,10 @@ h2 span {
   color: var(--muted);
 }
 
+
+/* =========================================
+   FOUNDER
+========================================= */
 
 .founder-feature {
   display: grid;
@@ -637,6 +675,10 @@ h2 span {
 }
 
 
+/* =========================================
+   TRAINING
+========================================= */
+
 .founder-training {
   margin-top: 20px;
   padding: 20px;
@@ -698,6 +740,10 @@ h2 span {
   display: block;
 }
 
+
+/* =========================================
+   TEAM
+========================================= */
 
 .team-subheading {
   display: flex;
@@ -774,6 +820,10 @@ h2 span {
 }
 
 
+/* =========================================
+   SLOGAN
+========================================= */
+
 .values-banner {
   padding: 43px 0;
   color: var(--white);
@@ -803,6 +853,10 @@ h2 span {
   color: var(--yellow);
 }
 
+
+/* =========================================
+   SERVICE INFO
+========================================= */
 
 .service-info-section {
   padding: 50px 0;
@@ -884,6 +938,10 @@ h2 span {
 }
 
 
+/* =========================================
+   GALLERY
+========================================= */
+
 .gallery-section {
   padding: 50px 0;
   background: #fbfdff;
@@ -926,6 +984,10 @@ h2 span {
   object-position: center center;
 }
 
+
+/* =========================================
+   CONTACT
+========================================= */
 
 .contact-section {
   padding: 52px 0;
@@ -985,6 +1047,11 @@ h2 span {
   font-size: 0.85rem;
 }
 
+
+/* =========================================
+   FORM
+========================================= */
+
 .form-card {
   padding: 30px;
   border: 1px solid rgba(43, 169, 233, 0.2);
@@ -1028,10 +1095,16 @@ h2 span {
   outline: none;
 }
 
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(43, 169, 233, 0.1);
 }
 
 .form-submit {
@@ -1047,12 +1120,46 @@ h2 span {
   background: var(--yellow);
   font-weight: 900;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.form-submit:hover {
+  transform: translateY(-1px);
+}
+
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .form-message {
   display: none;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
+.form-message.success {
+  display: block;
+  color: #155724;
+  background: #eaf8ee;
+  border: 1px solid #bfe5c9;
+}
+
+.form-message.error {
+  display: block;
+  color: #842029;
+  background: #fdecec;
+  border: 1px solid #f2b8bd;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .site-footer {
   padding-top: 40px;
@@ -1131,6 +1238,10 @@ h2 span {
 }
 
 
+/* =========================================
+   TABLET
+========================================= */
+
 @media (max-width: 1040px) {
 
   .header-button {
@@ -1159,6 +1270,10 @@ h2 span {
 
 }
 
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
 
 @media (max-width: 820px) {
 
@@ -1246,6 +1361,10 @@ h2 span {
 
 }
 
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 580px) {
 
