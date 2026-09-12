@@ -217,16 +217,16 @@
       <div class="intro-copy">
 
         <p>
-          Founded in 2016, Inspire Day Service provides meaningful
-          opportunities for adults aged 16+ with learning disabilities
-          and autism.
+          Founded in 2016, Inspire Day Service supports adults aged 16+
+          with learning disabilities and autism through meaningful,
+          person-centred opportunities.
         </p>
 
         <p>
-          Our qualified and experienced team takes a supportive,
-          person-centred approach, helping each individual develop
-          confidence, practical skills, independence and friendships
-          while enjoying a wide range of learning and social activities.
+          Our experienced team helps each individual build confidence,
+          practical life skills, independence and friendships, while
+          taking part in a varied programme of learning, activities
+          and social experiences.
         </p>
 
       </div>
@@ -1191,7 +1191,7 @@
 
       <form
         id="enquiryForm"
-        action="#"
+        action="https://formspree.io/f/xljekkva"
         method="POST"
       >
 
@@ -1209,6 +1209,7 @@
               type="text"
               id="name"
               name="name"
+              autocomplete="name"
               required
             >
 
@@ -1226,6 +1227,7 @@
               type="tel"
               id="phone"
               name="phone"
+              autocomplete="tel"
             >
 
           </div>
@@ -1245,6 +1247,7 @@
             type="email"
             id="email"
             name="email"
+            autocomplete="email"
             required
           >
 
@@ -1267,27 +1270,27 @@
               Please select
             </option>
 
-            <option>
+            <option value="General enquiry">
               General enquiry
             </option>
 
-            <option>
+            <option value="Looking for a day service">
               Looking for a day service
             </option>
 
-            <option>
+            <option value="Arrange a visit">
               Arrange a visit
             </option>
 
-            <option>
+            <option value="Referral enquiry">
               Referral enquiry
             </option>
 
-            <option>
+            <option value="Support requirements">
               Support requirements
             </option>
 
-            <option>
+            <option value="Other">
               Other
             </option>
 
@@ -1326,6 +1329,7 @@
         <p
           class="form-message"
           id="formMessage"
+          aria-live="polite"
         ></p>
 
 
